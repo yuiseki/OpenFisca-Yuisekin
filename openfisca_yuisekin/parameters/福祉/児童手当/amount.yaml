@@ -1,6 +1,6 @@
 description: Parenting allowance amount
 metadata:
-  reference: https://law.gov.example/parenting_allowance/amount
+  reference: https://law.gov.example/児童手当/amount
   unit: currency-EUR
 values:
   # This parameter is only defined since the 1st of Dec 2015.

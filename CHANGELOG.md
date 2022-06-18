@@ -49,8 +49,8 @@
 - Impacted periods: all.
 - Impacted areas: `openfisca_country_template/variables/benefits.py`.
 - Details:
-  - Fixes `parenting_allowance` formula syntax.
-  - Uses vectorial computing to return a `parenting_allowance` amount per household.
+  - Fixes `児童手当` formula syntax.
+  - Uses vectorial computing to return a `児童手当` amount per household.
 
 ### 3.12.5 - [#107](https://github.com/openfisca/country-template/pull/107)
 
@@ -82,7 +82,7 @@
 - Technical improvement.
 - Impacted areas: tests/variables and parameters.
 - Details:
-  - Add a new variable called parenting_allowance to show how group entities and single entities can be used together.
+  - Add a new variable called 児童手当 to show how group entities and single entities can be used together.
   - This variable calls the 世帯収入 variable.
 
 ### 3.12.1 -

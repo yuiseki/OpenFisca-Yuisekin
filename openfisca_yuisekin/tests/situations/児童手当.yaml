@@ -28,6 +28,6 @@
         birth: 2018-01-15
   output:
     household:
-      parenting_allowance:
+      児童手当:
         2017-01: 600
         2018-01: 0

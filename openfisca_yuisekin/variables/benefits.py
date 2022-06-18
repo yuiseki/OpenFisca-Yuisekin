@@ -79,7 +79,7 @@ class pension(Variable):
         return 年齢条件
 
 
-class parenting_allowance(Variable):
+class 児童手当(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
@@ -96,10 +96,10 @@ class parenting_allowance(Variable):
         if they are single with a child under 8
         or if they are partnered with a child under 6.
         """
-        parenting_allowance = parameters(period).福祉.parenting_allowance
+        児童手当 = parameters(period).福祉.児童手当
 
         世帯収入 = household("世帯収入", period)
-        所得閾値 = parenting_allowance.所得閾値
+        所得閾値 = 児童手当.所得閾値
         所得条件 = 世帯収入 <= 所得閾値
 
         is_single = household.nb_persons(Household.PARENT) == 1
@@ -108,7 +108,7 @@ class parenting_allowance(Variable):
         under_6 = household.any(ages < 6)
 
         allowance条件 = 所得条件 * ((is_single * under_8) + under_6)
-        allowance_amount = parenting_allowance.amount
+        allowance_amount = 児童手当.amount
 
         return allowance条件 * allowance_amount
 
