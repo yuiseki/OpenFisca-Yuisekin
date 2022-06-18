@@ -1,4 +1,4 @@
-name: Country-Template
+name: Yuisekin
 
 on: [ push ]
 
@@ -69,7 +69,7 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: build-${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ github.sha }}
-      - run: openfisca test --country-package openfisca_country_template openfisca_country_template/tests
+      - run: openfisca test --country-package openfisca_yuisekin openfisca_yuisekin/tests
 
   test-api:
     runs-on: ubuntu-latest
