@@ -19,8 +19,8 @@ class modify_social_security_taxation(Reform):
         A reform always defines an `apply` method that builds the reformed tax and benefit system from the reference one.
         See https://openfisca.org/doc/coding-the-legislation/reforms.html#writing-a-reform
 
-        Our reform modifies the `social_security_contribution` parameter, which is a scale.
-        This parameter is declared in `parameters/税金/social_security_contribution.yaml`.
+        Our reform modifies the `社会保険料` parameter, which is a scale.
+        This parameter is declared in `parameters/税金/社会保険料.yaml`.
 
         See https://openfisca.org/doc/coding-the-legislation/legislation_parameters.html
         """
@@ -35,7 +35,7 @@ class modify_social_security_taxation(Reform):
         of the YAML parameters. It can be modified and must be returned.
         """
         # Access the right parameter node:
-        brackets = parameters.税金.social_security_contribution.brackets
+        brackets = parameters.税金.社会保険料.brackets
 
         # Add 0.1 to the rates of the second bracket, keeping the same thresholds:
         for rate in brackets[1].rate.values_list:

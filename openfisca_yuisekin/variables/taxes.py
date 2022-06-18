@@ -27,21 +27,21 @@ class 所得税(Variable):
         return 対象人物("所得", 対象期間) * parameters(対象期間).税金.所得税率
 
 
-class social_security_contribution(Variable):
+class 社会保険料(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
     label = "Progressive contribution paid on salaries to finance social security"
-    reference = "https://law.gov.example/social_security_contribution"  # Always use the most official source
+    reference = "https://law.gov.example/社会保険料"  # Always use the most official source
 
     def formula(person, period, parameters):
         """
         Social security contribution.
 
-        The social_security_contribution is computed according to a marginal scale.
+        The 社会保険料 is computed according to a marginal scale.
         """
         所得 = person("所得", period)
-        scale = parameters(period).税金.social_security_contribution
+        scale = parameters(period).税金.社会保険料
 
         return scale.calc(所得)
 

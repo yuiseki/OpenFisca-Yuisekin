@@ -41,10 +41,10 @@ class total_税金(Variable):
     def formula(household, period, _parameters):
         """Total 税金."""
         所得税_i = household.members("所得税", period)
-        social_security_contribution_i = household.members("social_security_contribution", period)
+        社会保険料_i = household.members("社会保険料", period)
 
         return (
             + household.sum(所得税_i)
-            + household.sum(social_security_contribution_i)
+            + household.sum(社会保険料_i)
             + household("housing_tax", period.this_year) / 12
             )

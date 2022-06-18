@@ -38,5 +38,5 @@ class 可処分所得(Variable):
             + person("所得", period)
             + person("ベーシックインカム", period)
             - person("所得税", period)
-            - person("social_security_contribution", period)
+            - person("社会保険料", period)
             )

@@ -1,7 +1,7 @@
 # Test files describe situations and their expected outcomes
 # We can run this test on our command line using `openfisca-run-test modify_social_security_taxation.yaml`
 
-# This test is a partial adaptation of `social_security_contribution.yaml` to match the modifications introduced by the reform of the same name.
+# This test is a partial adaptation of `社会保険料.yaml` to match the modifications introduced by the reform of the same name.
 
 # Note the `reforms: ` key in the below YAML blocks.
 
@@ -11,7 +11,7 @@
   input:
     所得: 2000
   output:
-    social_security_contribution: 0
+    社会保険料: 0
 
 - name: Increased social security contribution on medium salaries
   reforms: openfisca_yuisekin.reforms.modify_social_security_taxation.modify_social_security_taxation
@@ -19,7 +19,7 @@
   input:
     所得: 15000
   output:
-    social_security_contribution: 1336
+    社会保険料: 1336
 
 - name: High social security contribution on high salaries
   reforms: openfisca_yuisekin.reforms.modify_social_security_taxation.modify_social_security_taxation
@@ -27,4 +27,4 @@
   input:
     所得: 50000
   output:
-    social_security_contribution: 8336
+    社会保険料: 8336
