@@ -14,37 +14,37 @@ from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import Household
 
 
-class total_benefits(Variable):
+class 福祉給付(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
     label = "Sum of the benefits perceived by a household"
     reference = "https://stats.gov.example/benefits"
 
-    def formula(household, period, _parameters):
+    def formula(対象世帯, 対象期間, _parameters):
         """Total benefits."""
-        ベーシックインカム_i = household.members("ベーシックインカム", period)  # Calculates the value of ベーシックインカム for each member of the household
+        ベーシックインカム_i = 対象世帯.members("ベーシックインカム", 対象期間)  # Calculates the value of ベーシックインカム for each member of the household
 
         return (
-            + household.sum(ベーシックインカム_i)  # Sum the household members ベーシックインカムs
-            + household("住宅手当", period)
+            + 対象世帯.sum(ベーシックインカム_i)  # Sum the household members ベーシックインカムs
+            + 対象世帯("住宅手当", 対象期間)
             )
 
 
-class total_税金(Variable):
+class 税金総額(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
     label = "Sum of the 税金 paid by a household"
     reference = "https://stats.gov.example/税金"
 
-    def formula(household, period, _parameters):
+    def formula(対象世帯, 対象期間, _parameters):
         """Total 税金."""
-        所得税_i = household.members("所得税", period)
-        社会保険料_i = household.members("社会保険料", period)
+        所得税_i = 対象世帯.members("所得税", 対象期間)
+        社会保険料_i = 対象世帯.members("社会保険料", 対象期間)
 
         return (
-            + household.sum(所得税_i)
-            + household.sum(社会保険料_i)
-            + household("固定資産税", period.this_year) / 12
+            + 対象世帯.sum(所得税_i)
+            + 対象世帯.sum(社会保険料_i)
+            + 対象世帯("固定資産税", 対象期間.this_year) / 12
             )

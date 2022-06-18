@@ -34,14 +34,14 @@ class 社会保険料(Variable):
     label = "Progressive contribution paid on salaries to finance social security"
     reference = "https://law.gov.example/社会保険料"  # Always use the most official source
 
-    def formula(person, period, parameters):
+    def formula(対象人物, 対象期間, parameters):
         """
         Social security contribution.
 
         The 社会保険料 is computed according to a marginal scale.
         """
-        所得 = person("所得", period)
-        scale = parameters(period).税金.社会保険料
+        所得 = 対象人物("所得", 対象期間)
+        scale = parameters(対象期間).税金.社会保険料
 
         return scale.calc(所得)
 
@@ -53,7 +53,7 @@ class 固定資産税(Variable):
     label = "Tax paid by each household proportionally to the size of its accommodation"
     reference = "https://law.gov.example/固定資産税"  # Always use the most official source
 
-    def formula(household, period, parameters):
+    def formula(対象世帯, 対象期間, parameters):
         """
         Housing tax.
 
@@ -61,14 +61,14 @@ class 固定資産税(Variable):
         Here period is a year. We can get the first month of a year with the following shortcut.
         To build different periods, see https://openfisca.org/doc/coding-the-legislation/35_periods.html#calculate-dependencies-for-a-specific-period
         """
-        january = period.first_month
-        accommodation_size = household("accommodation_size", january)
+        january = 対象期間.first_month
+        accommodation_size = 対象世帯("accommodation_size", january)
 
-        tax_params = parameters(period).税金.固定資産税
+        tax_params = parameters(対象期間).税金.固定資産税
         tax_金額 = max_(accommodation_size * tax_params.rate, tax_params.minimal_金額)
 
         # `housing_occupancy_status` is an Enum variable
-        occupancy_status = household("housing_occupancy_status", january)
+        occupancy_status = 対象世帯("housing_occupancy_status", january)
         HousingOccupancyStatus = occupancy_status.possible_values  # Get the enum associated with the variable
         # To access an enum element, we use the `.` notation.
         tenant = (occupancy_status == HousingOccupancyStatus.tenant)

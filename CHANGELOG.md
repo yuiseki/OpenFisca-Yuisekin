@@ -422,7 +422,7 @@ name: Housing tax
 - Details:
   - Add a parameter and a variable with non ascii characters:
     - Introduce `定年年齢` parameter.
-    - Introduce `pension` variable.
+    - Introduce `年金` variable.
 
 ### 2.0.1 - [#24](https://github.com/openfisca/country-template/pull/24) [#27](https://github.com/openfisca/country-template/pull/27)
 
@@ -526,8 +526,8 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
 - Impacted periods: all.
 - Impacted areas: `stats`.
 - Details:
-  - Introduce `total_benefits`.
-  - Introduce `total_税金`.
+  - Introduce `福祉給付`.
+  - Introduce `税金総額`.
 
 <!-- -->
 

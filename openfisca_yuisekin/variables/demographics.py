@@ -34,17 +34,17 @@ class 年齢(Variable):
     definition_period = MONTH
     label = "Person's age (in years)"
 
-    def formula(person, period, _parameters):
+    def formula(対象人物, 対象期間, _parameters):
         """
         Person's age (in years).
 
         A person's age is computed according to its birth date.
         """
-        birth = person("birth", period)
+        birth = 対象人物("birth", 対象期間)
         birth_year = birth.astype("datetime64[Y]").astype(int) + 1970
         birth_month = birth.astype("datetime64[M]").astype(int) % 12 + 1
         birth_day = (birth - birth.astype("datetime64[M]") + 1).astype(int)
 
-        is_birthday_past = (birth_month < period.start.month) + (birth_month == period.start.month) * (birth_day <= period.start.day)
+        is_birthday_past = (birth_month < 対象期間.start.month) + (birth_month == 対象期間.start.month) * (birth_day <= 対象期間.start.day)
 
-        return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, subtract one year
+        return (対象期間.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, subtract one year

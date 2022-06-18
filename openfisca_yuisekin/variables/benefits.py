@@ -37,7 +37,7 @@ class 住宅手当(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
-    label = "Housing allowance"
+    label = "住宅手当"
     reference = "https://law.gov.example/住宅手当"  # Always use the most official source
     end = "2016-11-30"  # This allowance was removed on the 1st of Dec 2016. Calculating it before this date will always return the variable default value, 0.
     unit = "currency-EUR"
@@ -46,7 +46,7 @@ class 住宅手当(Variable):
     It disappeared in Dec 2016.
     """
 
-    def formula_1980(household, period, parameters):
+    def formula_1980(対象世帯, 対象期間, parameters):
         """
         Housing allowance.
 
@@ -56,26 +56,19 @@ class 住宅手当(Variable):
         To compute this allowance, the 'rent' value must be provided for the same month,
         but 'housing_occupancy_status' is not necessary.
         """
-        return household("rent", period) * parameters(period).福祉.住宅手当
+        return 対象世帯("rent", 対象期間) * parameters(対象期間).福祉.住宅手当
 
 
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
-class pension(Variable):
+class 年金(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    label = "Pension for the elderly. Pension attribuée aux personnes âgées. تقاعد."
+    label = "年金 for the elderly. 年金 attribuée aux personnes âgées. تقاعد."
     reference = ["https://fr.wikipedia.org/wiki/Retraite_(économie)", "https://ar.wikipedia.org/wiki/تقاعد"]
 
-    def formula(person, period, parameters):
-        """
-        Pension for the elderly.
-
-        A person's pension depends on their birth date.
-        In French: retraite selon l'âge.
-        In Arabic: تقاعد.
-        """
-        年齢条件 = person("年齢", period) >= parameters(period).全般.定年年齢
+    def formula(対象人物, 対象期間, parameters):
+        年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.定年年齢
         return 年齢条件
 
 
@@ -111,7 +104,7 @@ class 世帯収入(Variable):
     definition_period = MONTH
     label = "The sum of the salaries of those living in a household"
 
-    def formula(household, period, _parameters):
+    def formula(対象世帯, 対象期間, _parameters):
         """A household's 所得."""
-        salaries = household.members("所得", period)
-        return household.sum(salaries)
+        各収入 = 対象世帯.members("所得", 対象期間)
+        return 対象世帯.sum(各収入)

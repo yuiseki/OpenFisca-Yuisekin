@@ -26,10 +26,10 @@
     "households": {
         "_": {
             "parents": ["Alicia", "Javier"],
-            "total_benefits": {
+            "福祉給付": {
                 "2017-01": null
             },
-            "total_税金": {
+            "税金総額": {
                 "2017-01": null
             }
         }
