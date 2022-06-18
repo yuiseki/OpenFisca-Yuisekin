@@ -18,28 +18,19 @@ class ベーシックインカム(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    label = "ベーシックインカム provided to adults"
-    reference = "https://law.gov.example/ベーシックインカム"  # Always use the most official source
+    label = "ベーシックインカム"
+    reference = "https://gov.ユイセキン共和国/ベーシックインカム"
 
-    def formula_2016_12(person, period, parameters):
-        """
-        ベーシックインカム provided to adults.
+    def formula_2016_12(対象人物, 対象期間, parameters):
+        年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
+        # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
+        return 年齢条件 * parameters(対象期間).benefits.ベーシックインカム
 
-        Since Dec 1st 2016, the ベーシックインカム is provided to any adult, without considering their 所得.
-        """
-        年齢条件 = person("年齢", period) >= parameters(period).general.age_of_majority
-        return 年齢条件 * parameters(period).benefits.ベーシックインカム  # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
-
-    def formula_2015_12(person, period, parameters):
-        """
-        ベーシックインカム provided to adults.
-
-        From Dec 1st 2015 to Nov 30 2016, the ベーシックインカム is provided to adults who have no 所得.
-        Before Dec 1st 2015, the ベーシックインカム does not exist in the law, and calculating it returns its default value, which is 0.
-        """
-        年齢条件 = person("年齢", period) >= parameters(period).general.age_of_majority
-        所得条件 = person("所得", period) == 0
-        return 年齢条件 * 所得条件 * parameters(period).benefits.ベーシックインカム  # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
+    def formula_2015_12(対象人物, 対象期間, parameters):
+        年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
+        所得条件 = 対象人物("所得", 対象期間) == 0
+        # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
+        return 年齢条件 * 所得条件 * parameters(対象期間).benefits.ベーシックインカム
 
 
 class housing_allowance(Variable):
@@ -84,7 +75,7 @@ class pension(Variable):
         In French: retraite selon l'âge.
         In Arabic: تقاعد.
         """
-        年齢条件 = person("年齢", period) >= parameters(period).general.age_of_retirement
+        年齢条件 = person("年齢", period) >= parameters(period).general.定年年齢
         return 年齢条件
 
 

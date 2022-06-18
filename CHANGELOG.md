@@ -421,7 +421,7 @@ name: Housing tax
   - Variables `benefits`.
 - Details:
   - Add a parameter and a variable with non ascii characters:
-    - Introduce `age_of_retirement` parameter.
+    - Introduce `定年年齢` parameter.
     - Introduce `pension` variable.
 
 ### 2.0.1 - [#24](https://github.com/openfisca/country-template/pull/24) [#27](https://github.com/openfisca/country-template/pull/27)
