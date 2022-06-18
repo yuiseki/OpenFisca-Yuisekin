@@ -83,34 +83,26 @@ class 児童手当(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
-    label = "Allowance for low 所得 people with children to care for."
-    documentation = "Loosely based on the Australian parenting pension."
+    label = "低所得世帯への児童手当"
+    documentation = "実際のオーストラリアの制度を参考にしている"
     reference = "https://www.servicesaustralia.gov.au/individuals/services/centrelink/parenting-payment/who-can-get-it"
 
-    def formula(household, period, parameters):
-        """
-        Parenting allowance for households.
+    def formula(対象世帯, 対象期間, parameters):
+        児童手当 = parameters(対象期間).福祉.児童手当
 
-        A person's parenting allowance depends on how many dependents they have,
-        how much they, and their partner, earn
-        if they are single with a child under 8
-        or if they are partnered with a child under 6.
-        """
-        児童手当 = parameters(period).福祉.児童手当
-
-        世帯収入 = household("世帯収入", period)
+        世帯収入 = 対象世帯("世帯収入", 対象期間)
         所得閾値 = 児童手当.所得閾値
         所得条件 = 世帯収入 <= 所得閾値
 
-        is_single = household.nb_persons(Household.PARENT) == 1
-        ages = household.members("年齢", period)
-        under_8 = household.any(ages < 8)
-        under_6 = household.any(ages < 6)
+        ひとり親 = 対象世帯.nb_persons(Household.PARENT) == 1
+        子どもたちの年齢 = 対象世帯.members("年齢", 対象期間)
+        八歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 8)
+        六歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 6)
 
-        allowance条件 = 所得条件 * ((is_single * under_8) + under_6)
-        allowance_金額 = 児童手当.金額
+        手当条件 = 所得条件 * ((ひとり親 * 八歳未満の子どもがいる) + 六歳未満の子どもがいる)
+        手当金額 = 児童手当.金額
 
-        return allowance条件 * allowance_金額
+        return 手当条件 * 手当金額
 
 
 class 世帯収入(Variable):
