@@ -4,7 +4,7 @@
 - name: The ベーシックインカム should be 0 before it was introduced
   period: 2015-11
   input:
-    age: 18
+    年齢: 18
     所得: 0
   output:
     ベーシックインカム: 0
@@ -13,7 +13,7 @@
   period: 2015-12
   input:
     所得: 0
-    age: 18
+    年齢: 18
   output:
     ベーシックインカム: 600
 
@@ -21,7 +21,7 @@
   period: 2015-12
   input:
     所得: 0
-    age: 17
+    年齢: 17
   output:
     ベーシックインカム: 0
 
@@ -29,7 +29,7 @@
   period: 2015-12
   input:
     所得: 1200
-    age: 18
+    年齢: 18
   output:
     ベーシックインカム: 0
 
@@ -37,7 +37,7 @@
   period: 2016-12
   input:
     所得: 0
-    age: 17
+    年齢: 17
   output:
     ベーシックインカム: 0
 
@@ -45,6 +45,6 @@
   period: 2016-12
   input:
     所得: 1200
-    age: 18
+    年齢: 18
   output:
     ベーシックインカム: 600

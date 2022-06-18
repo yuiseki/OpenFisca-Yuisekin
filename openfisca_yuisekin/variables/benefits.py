@@ -27,8 +27,8 @@ class ベーシックインカム(Variable):
 
         Since Dec 1st 2016, the ベーシックインカム is provided to any adult, without considering their 所得.
         """
-        age_condition = person("age", period) >= parameters(period).general.age_of_majority
-        return age_condition * parameters(period).benefits.ベーシックインカム  # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
+        年齢条件 = person("年齢", period) >= parameters(period).general.age_of_majority
+        return 年齢条件 * parameters(period).benefits.ベーシックインカム  # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
 
     def formula_2015_12(person, period, parameters):
         """
@@ -37,9 +37,9 @@ class ベーシックインカム(Variable):
         From Dec 1st 2015 to Nov 30 2016, the ベーシックインカム is provided to adults who have no 所得.
         Before Dec 1st 2015, the ベーシックインカム does not exist in the law, and calculating it returns its default value, which is 0.
         """
-        age_condition = person("age", period) >= parameters(period).general.age_of_majority
-        所得_condition = person("所得", period) == 0
-        return age_condition * 所得_condition * parameters(period).benefits.ベーシックインカム  # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
+        年齢条件 = person("年齢", period) >= parameters(period).general.age_of_majority
+        所得条件 = person("所得", period) == 0
+        return 年齢条件 * 所得条件 * parameters(period).benefits.ベーシックインカム  # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
 
 
 class housing_allowance(Variable):
@@ -84,8 +84,8 @@ class pension(Variable):
         In French: retraite selon l'âge.
         In Arabic: تقاعد.
         """
-        age_condition = person("age", period) >= parameters(period).general.age_of_retirement
-        return age_condition
+        年齢条件 = person("年齢", period) >= parameters(period).general.age_of_retirement
+        return 年齢条件
 
 
 class parenting_allowance(Variable):
@@ -109,17 +109,17 @@ class parenting_allowance(Variable):
 
         世帯収入 = household("世帯収入", period)
         所得閾値 = parenting_allowance.所得閾値
-        所得_condition = 世帯収入 <= 所得閾値
+        所得条件 = 世帯収入 <= 所得閾値
 
         is_single = household.nb_persons(Household.PARENT) == 1
-        ages = household.members("age", period)
+        ages = household.members("年齢", period)
         under_8 = household.any(ages < 8)
         under_6 = household.any(ages < 6)
 
-        allowance_condition = 所得_condition * ((is_single * under_8) + under_6)
+        allowance条件 = 所得条件 * ((is_single * under_8) + under_6)
         allowance_amount = parenting_allowance.amount
 
-        return allowance_condition * allowance_amount
+        return allowance条件 * allowance_amount
 
 
 class 世帯収入(Variable):

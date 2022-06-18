@@ -1,5 +1,5 @@
 # A parameter can contain utf-8 characters.
-description: Age of retirement (in years). In French âge de la retraite (en années).
+description: 年齢 of retirement (in years). In French âge de la retraite (en années).
 metadata:
   reference: https://fr.wikipedia.org/wiki/Retraite_(économie)
   unit: year

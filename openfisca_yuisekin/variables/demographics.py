@@ -28,7 +28,7 @@ class birth(Variable):
     reference = "https://en.wiktionary.org/wiki/birthdate"
 
 
-class age(Variable):
+class 年齢(Variable):
     value_type = int
     entity = Person
     definition_period = MONTH
