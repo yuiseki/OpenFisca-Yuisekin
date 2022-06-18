@@ -23,7 +23,7 @@
   output:
     persons:
       Alicia:
-        income_tax: 360
+        income_tax: 2160
       Michael:
         income_tax: 0
     household:
