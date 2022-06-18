@@ -12,7 +12,7 @@ from openfisca_core.reforms import Reform
 from openfisca_core.variables import Variable
 
 # Import the Entities specifically defined for this tax and benefit system
-from openfisca_yuisekin.entities import Person
+from openfisca_yuisekin.entities import 人物
 
 
 def create_dynamic_variable(name, **variable):
@@ -42,7 +42,7 @@ class add_dynamic_variable(Reform):
         NewVariable = create_dynamic_variable(
             name = "goes_to_school",
             value_type = bool,
-            entity = Person,
+            entity = 人物,
             default_value = True,
             definition_period = MONTH,
             label = "The person goes to school (only relevant for children)",

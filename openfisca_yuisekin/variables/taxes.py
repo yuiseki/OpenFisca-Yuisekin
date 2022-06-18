@@ -1,7 +1,7 @@
 """
 This file defines variables for the modelled legislation.
 
-A variable is a property of an Entity such as a Person, a Household…
+A variable is a property of an Entity such as a 人物, a 世帯…
 
 See https://openfisca.org/doc/key-concepts/variables.html
 """
@@ -13,12 +13,12 @@ from openfisca_core.periods import MONTH, YEAR
 from openfisca_core.variables import Variable
 
 # Import the Entities specifically defined for this tax and benefit system
-from openfisca_yuisekin.entities import Household, Person
+from openfisca_yuisekin.entities import 世帯, 人物
 
 
 class 所得税(Variable):
     value_type = float
-    entity = Person
+    entity = 人物
     definition_period = MONTH
     label = "所得税"
     reference = "https://law.gov.example/所得税"  # Always use the most official source
@@ -29,7 +29,7 @@ class 所得税(Variable):
 
 class 社会保険料(Variable):
     value_type = float
-    entity = Person
+    entity = 人物
     definition_period = MONTH
     label = "Progressive contribution paid on salaries to finance social security"
     reference = "https://law.gov.example/社会保険料"  # Always use the most official source
@@ -48,7 +48,7 @@ class 社会保険料(Variable):
 
 class 固定資産税(Variable):
     value_type = float
-    entity = Household
+    entity = 世帯
     definition_period = YEAR  # This housing tax is defined for a year.
     label = "Tax paid by each household proportionally to the size of its accommodation"
     reference = "https://law.gov.example/固定資産税"  # Always use the most official source

@@ -1,7 +1,7 @@
 """
 This file defines variables for the modelled legislation.
 
-A variable is a property of an Entity such as a Person, a Household…
+A variable is a property of an Entity such as a 人物, a 世帯…
 
 See https://openfisca.org/doc/key-concepts/variables.html
 """
@@ -11,12 +11,12 @@ from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 
 # Import the Entities specifically defined for this tax and benefit system
-from openfisca_yuisekin.entities import Household, Person
+from openfisca_yuisekin.entities import 世帯, 人物
 
 
 class ベーシックインカム(Variable):
     value_type = float
-    entity = Person
+    entity = 人物
     definition_period = MONTH
     label = "ベーシックインカム"
     reference = "https://gov.ユイセキン共和国/ベーシックインカム"
@@ -35,7 +35,7 @@ class ベーシックインカム(Variable):
 
 class 住宅手当(Variable):
     value_type = float
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "住宅手当"
     reference = "https://law.gov.example/住宅手当"  # Always use the most official source
@@ -62,7 +62,7 @@ class 住宅手当(Variable):
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
 class 年金(Variable):
     value_type = float
-    entity = Person
+    entity = 人物
     definition_period = MONTH
     label = "年金 for the elderly. 年金 attribuée aux personnes âgées. تقاعد."
     reference = ["https://fr.wikipedia.org/wiki/Retraite_(économie)", "https://ar.wikipedia.org/wiki/تقاعد"]
@@ -74,7 +74,7 @@ class 年金(Variable):
 
 class 児童手当(Variable):
     value_type = float
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "低所得世帯への児童手当"
     documentation = "実際のオーストラリアの制度を参考にしている"
@@ -87,7 +87,7 @@ class 児童手当(Variable):
         所得閾値 = 児童手当.所得閾値
         所得条件 = 世帯収入 <= 所得閾値
 
-        ひとり親 = 対象世帯.nb_persons(Household.PARENT) == 1
+        ひとり親 = 対象世帯.nb_persons(世帯.PARENT) == 1
         子どもたちの年齢 = 対象世帯.members("年齢", 対象期間)
         八歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 8)
         六歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 6)
@@ -100,7 +100,7 @@ class 児童手当(Variable):
 
 class 世帯収入(Variable):
     value_type = float
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "The sum of the salaries of those living in a household"
 

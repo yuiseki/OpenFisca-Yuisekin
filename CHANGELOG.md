@@ -471,7 +471,7 @@ Now:
 Before:
 
 ```
-name: Household living in a 40 sq. metres accommodation while being free lodgers
+name: 世帯 living in a 40 sq. metres accommodation while being free lodgers
   period: 2017
   input_variables:
     accommodation_size:
@@ -485,7 +485,7 @@ name: Household living in a 40 sq. metres accommodation while being free lodgers
 Now:
 
 ```
-name: Household living in a 40 sq. metres accommodation while being free lodgers
+name: 世帯 living in a 40 sq. metres accommodation while being free lodgers
   period: 2017
   input_variables:
     accommodation_size:

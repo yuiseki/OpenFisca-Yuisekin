@@ -1,7 +1,7 @@
 """
 This file defines variables for the modelled legislation.
 
-A variable is a property of an Entity such as a Person, a Household…
+A variable is a property of an Entity such as a 人物, a 世帯…
 
 See https://openfisca.org/doc/key-concepts/variables.html
 """
@@ -12,13 +12,13 @@ from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 
 # Import the Entities specifically defined for this tax and benefit system
-from openfisca_yuisekin.entities import Household
+from openfisca_yuisekin.entities import 世帯
 
 
 # This variable is a pure input: it doesn't have a formula
 class accommodation_size(Variable):
     value_type = float
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "Size of the accommodation, in square metres"
 
@@ -26,7 +26,7 @@ class accommodation_size(Variable):
 # This variable is a pure input: it doesn't have a formula
 class rent(Variable):
     value_type = float
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "Rent paid by the household"
 
@@ -45,7 +45,7 @@ class housing_occupancy_status(Variable):
     value_type = Enum
     possible_values = HousingOccupancyStatus
     default_value = HousingOccupancyStatus.tenant
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "Legal housing situation of the household concerning their main residence"
 
@@ -53,6 +53,6 @@ class housing_occupancy_status(Variable):
 class postal_code(Variable):
     value_type = str
     max_length = 5
-    entity = Household
+    entity = 世帯
     definition_period = MONTH
     label = "Postal code of the household"
