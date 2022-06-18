@@ -83,7 +83,7 @@
 - Impacted areas: tests/variables and parameters.
 - Details:
   - Add a new variable called parenting_allowance to show how group entities and single entities can be used together.
-  - This variable calls the household_income variable.
+  - This variable calls the 世帯収入 variable.
 
 ### 3.12.1 -
 
@@ -106,7 +106,7 @@
 - Impacted areas: `reforms/add_new_tax.py`.
 - Details:
   - Add a new reform example creating a variable (there was none prior).
-  - The example is a new tax that adds a fixed 100.0 of the country's currency to the actual income tax.
+  - The example is a new tax that adds a fixed 100.0 of the country's currency to the actual 所得税.
 
 ### 3.9.13 - [#96](https://github.com/openfisca/country-template/pull/96)
 
@@ -216,7 +216,7 @@
 For instance, a test that was using the `input_variables` and the `output_variables` keywords like:
 
 ```yaml
-- name: Basic income
+- name: ベーシックインカム
   period: 2016-12
   input_variables:
     所得: 1200
@@ -227,7 +227,7 @@ For instance, a test that was using the `input_variables` and the `output_variab
 Becomes:
 
 ```yaml
-- name: Basic income
+- name: ベーシックインカム
   period: 2016-12
   input:
     所得: 1200
@@ -610,7 +610,7 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
   - `benefits`.
   - `demographics`.
   - `housing`.
-  - `income`.
+  - `所得`.
   - `taxes`.
 - Details:
   - Build the skeleton of the tax and benefit system.

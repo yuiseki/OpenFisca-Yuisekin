@@ -26,7 +26,7 @@ class total_benefits(Variable):
         ベーシックインカム_i = household.members("ベーシックインカム", period)  # Calculates the value of ベーシックインカム for each member of the household
 
         return (
-            + household.sum(ベーシックインカム_i)  # Sum the household members basic incomes
+            + household.sum(ベーシックインカム_i)  # Sum the household members ベーシックインカムs
             + household("housing_allowance", period)
             )
 

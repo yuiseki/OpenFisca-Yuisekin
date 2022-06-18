@@ -20,14 +20,14 @@ class 所得税(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    label = "Income tax"
+    label = "所得税"
     reference = "https://law.gov.example/所得税"  # Always use the most official source
 
     def formula(person, period, parameters):
         """
-        Income tax.
+        所得税.
 
-        The formula to compute the income tax for a given person at a given period
+        The formula to compute the 所得税 for a given person at a given period
         """
         return person("所得", period) * parameters(period).taxes.所得税率
 

@@ -33,7 +33,7 @@ class 可処分所得(Variable):
     reference = "https://stats.gov.example/可処分所得"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definitions.
 
     def formula(person, period, _parameters):
-        """Disposable income."""
+        """Disposable 所得."""
         return (
             + person("所得", period)
             + person("ベーシックインカム", period)

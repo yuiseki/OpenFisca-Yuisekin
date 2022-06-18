@@ -1,18 +1,17 @@
 # OpenFisca Yuisekin
 
-
 The country whose law is modelled here has a very simple tax and benefit system.
 
 - It has a flat rate tax whose rates increase every year.
-- On the first of December, 2015, it introduced a basic income for all its citizens of age who have no income.
-- On the first of December, 2016, it removed the income condition, providing all its adult citizens with a basic income.
+- On the first of December, 2015, it introduced a ベーシックインカム for all its citizens of age who have no 所得.
+- On the first of December, 2016, it removed the 所得 condition, providing all its adult citizens with a ベーシックインカム.
 
 These elements are described in different folders. All the modelling happens within the `openfisca_yuisekin` folder.
 
 - The rates are in the `parameters` folder.
 - The formulas are in the `variables` folder.
-- This country package comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
-    - In this country, there is [a reform project](./openfisca_yuisekin/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
+- This country package comes also with _reforms_ in the `reforms` folder. This is optional: your country may exist without defining any reform.
+  - In this country, there is [a reform project](./openfisca_yuisekin/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
 
 The files that are outside from the `openfisca_yuisekin` folder are used to set up the development environment.
 
@@ -50,6 +49,7 @@ Two install procedures are available. Pick procedure A or B below depending on h
 ### A. Minimal Installation (Pip Install)
 
 Follow this installation if you wish to:
+
 - run calculations on a large population;
 - create tax & benefits simulations;
 - write an extension to this legislation (e.g. city specific tax & benefits);
@@ -69,6 +69,7 @@ python --version  # should print "Python 3.7.xx".
 pip --version  # should print at least 9.0.
 # if not, run "pip install --upgrade pip"
 ```
+
 Install the Country Package:
 
 ```sh
@@ -85,6 +86,7 @@ pip install openfisca_yuisekin
 - To serve this Country Package, serve the [OpenFisca web API](#serve-your-country-package-with-the-openFisca-web-api).
 
 Depending on what you want to do with OpenFisca, you may want to install yet other packages in your venv:
+
 - To install extensions or write on top of this Country Package, head to the [Extensions documentation](https://openfisca.org/doc/contribute/extensions.html).
 - To plot simulation results, try [matplotlib](http://matplotlib.org/).
 - To manage data, check out [pandas](http://pandas.pydata.org/).
@@ -92,6 +94,7 @@ Depending on what you want to do with OpenFisca, you may want to install yet oth
 ### B. Advanced Installation (Git Clone)
 
 Follow this tutorial if you wish to:
+
 - create or change this Country Package's legislation;
 - contribute to the source code.
 
@@ -111,6 +114,7 @@ python --version  # should print "Python 3.7.xx".
 pip --version  # should print at least 9.0.
 # if not, run "pip install --upgrade pip"
 ```
+
 Clone this Country Package on your machine:
 
 ```sh
