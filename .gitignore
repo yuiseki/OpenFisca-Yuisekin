@@ -1,0 +1,20 @@
+# Python builds
+
+*.egg-info
+*.pyc
+build
+dist
+.venv
+
+# Editors
+
+.project
+.pydevproject
+.settings
+.spyderproject
+.vscode
+
+# OS stuff
+
+.DS_Store
+*~
