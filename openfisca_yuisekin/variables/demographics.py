@@ -19,11 +19,11 @@ from openfisca_yuisekin.entities import 人物
 
 
 # This variable is a pure input: it doesn't have a formula
-class birth(Variable):
+class 誕生年月日(Variable):
     value_type = date
     default_value = date(1970, 1, 1)  # By default, if no value is set for a simulation, we consider the people involved in a simulation to be born on the 1st of Jan 1970.
     entity = 人物
-    label = "Birth date"
+    label = "誕生年月日"
     definition_period = ETERNITY  # This variable cannot change over time.
     reference = "https://en.wiktionary.org/wiki/birthdate"
 
@@ -35,7 +35,7 @@ class 年齢(Variable):
     label = "人物's age (in years)"
 
     def formula(対象人物, 対象期間, _parameters):
-        誕生年月日 = 対象人物("birth", 対象期間)
+        誕生年月日 = 対象人物("誕生年月日", 対象期間)
         誕生年 = 誕生年月日.astype("datetime64[Y]").astype(int) + 1970
         誕生月 = 誕生年月日.astype("datetime64[M]").astype(int) % 12 + 1
         誕生日 = (誕生年月日 - 誕生年月日.astype("datetime64[M]") + 1).astype(int)
