@@ -24,13 +24,13 @@ class ベーシックインカム(Variable):
     def formula_2016_12(対象人物, 対象期間, parameters):
         年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
         # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
-        return 年齢条件 * parameters(対象期間).benefits.ベーシックインカム
+        return 年齢条件 * parameters(対象期間).福祉.ベーシックインカム
 
     def formula_2015_12(対象人物, 対象期間, parameters):
         年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
         所得条件 = 対象人物("所得", 対象期間) == 0
         # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
-        return 年齢条件 * 所得条件 * parameters(対象期間).benefits.ベーシックインカム
+        return 年齢条件 * 所得条件 * parameters(対象期間).福祉.ベーシックインカム
 
 
 class housing_allowance(Variable):
@@ -56,7 +56,7 @@ class housing_allowance(Variable):
         To compute this allowance, the 'rent' value must be provided for the same month,
         but 'housing_occupancy_status' is not necessary.
         """
-        return household("rent", period) * parameters(period).benefits.housing_allowance
+        return household("rent", period) * parameters(period).福祉.housing_allowance
 
 
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
@@ -75,7 +75,7 @@ class pension(Variable):
         In French: retraite selon l'âge.
         In Arabic: تقاعد.
         """
-        年齢条件 = person("年齢", period) >= parameters(period).general.定年年齢
+        年齢条件 = person("年齢", period) >= parameters(period).全般.定年年齢
         return 年齢条件
 
 
@@ -96,7 +96,7 @@ class parenting_allowance(Variable):
         if they are single with a child under 8
         or if they are partnered with a child under 6.
         """
-        parenting_allowance = parameters(period).benefits.parenting_allowance
+        parenting_allowance = parameters(period).福祉.parenting_allowance
 
         世帯収入 = household("世帯収入", period)
         所得閾値 = parenting_allowance.所得閾値

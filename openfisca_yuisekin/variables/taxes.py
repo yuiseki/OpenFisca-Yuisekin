@@ -23,13 +23,8 @@ class 所得税(Variable):
     label = "所得税"
     reference = "https://law.gov.example/所得税"  # Always use the most official source
 
-    def formula(person, period, parameters):
-        """
-        所得税.
-
-        The formula to compute the 所得税 for a given person at a given period
-        """
-        return person("所得", period) * parameters(period).税金.所得税率
+    def formula(対象人物, 対象期間, parameters):
+        return 対象人物("所得", 対象期間) * parameters(対象期間).税金.所得税率
 
 
 class social_security_contribution(Variable):
