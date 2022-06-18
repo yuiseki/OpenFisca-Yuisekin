@@ -28,7 +28,7 @@ class rent(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "Rent paid by the household"
+    label = "Rent paid by the 世帯"
 
 
 # Possible values for the housing_occupancy_status variable, defined further down
@@ -47,7 +47,7 @@ class housing_occupancy_status(Variable):
     default_value = HousingOccupancyStatus.tenant
     entity = 世帯
     definition_period = MONTH
-    label = "Legal housing situation of the household concerning their main residence"
+    label = "Legal housing situation of the 世帯 concerning their main residence"
 
 
 class postal_code(Variable):
@@ -55,4 +55,4 @@ class postal_code(Variable):
     max_length = 5
     entity = 世帯
     definition_period = MONTH
-    label = "Postal code of the household"
+    label = "Postal code of the 世帯"

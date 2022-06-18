@@ -102,9 +102,9 @@ class 世帯収入(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "The sum of the salaries of those living in a household"
+    label = "The sum of the salaries of those living in a 世帯"
 
     def formula(対象世帯, 対象期間, _parameters):
-        """A household's 所得."""
+        """A 世帯's 所得."""
         各収入 = 対象世帯.members("所得", 対象期間)
         return 対象世帯.sum(各収入)

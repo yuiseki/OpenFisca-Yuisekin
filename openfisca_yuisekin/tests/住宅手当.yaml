@@ -1,7 +1,7 @@
 # Test files describe situations and their expected outcomes
 # We can run this test on our command line using `openfisca-run-test 住宅手当.yaml`
 
-- name: In january 2016, a household paying 400 of rent gets an allowance of 100
+- name: In january 2016, a 世帯 paying 400 of rent gets an allowance of 100
   period: 2016-01
   input:
     rent: 400

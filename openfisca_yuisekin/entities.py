@@ -1,7 +1,7 @@
 """
 This file defines the entities needed by our legislation.
 
-税金 and benefits can be calculated for different entities: persons, household, companies, etc.
+税金 and benefits can be calculated for different entities: persons, 世帯, companies, etc.
 
 See https://openfisca.org/doc/key-concepts/person,_entities,_role.html
 """
@@ -9,8 +9,8 @@ See https://openfisca.org/doc/key-concepts/person,_entities,_role.html
 from openfisca_core.entities import build_entity
 
 世帯 = build_entity(
-    key = "household",
-    plural = "households",
+    key = "世帯",
+    plural = "世帯",
     label = "All the people in a family or group who live together in the same place.",
     doc = """
     世帯 is an example of a group entity.
@@ -21,8 +21,8 @@ from openfisca_core.entities import build_entity
     Housing variables (e.g. 固定資産税') are usually defined for a group entity such as '世帯'.
 
     Usage:
-    Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with household.nb_persons(世帯.SECOND_PARENT)).
-    Calculate a variable applied to each individual of the group entity (e.g. calculate the '所得' of each member of the '世帯' with salaries = household.members("所得", period = MONTH); sum_salaries = household.sum(salaries)).
+    Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with 世帯.nb_persons(世帯.SECOND_PARENT)).
+    Calculate a variable applied to each individual of the group entity (e.g. calculate the '所得' of each member of the '世帯' with salaries = 世帯.members("所得", period = MONTH); sum_salaries = 世帯.sum(salaries)).
 
     For more information, see: https://openfisca.org/doc/coding-the-legislation/50_entities.html
     """,
@@ -33,13 +33,13 @@ from openfisca_core.entities import build_entity
             "label": "Parents",
             "max": 2,
             "subroles": ["first_parent", "second_parent"],
-            "doc": "The one or two adults in charge of the household.",
+            "doc": "The one or two adults in charge of the 世帯.",
             },
         {
             "key": "child",
             "plural": "children",
             "label": "Child",
-            "doc": "Other individuals living in the household.",
+            "doc": "Other individuals living in the 世帯.",
             },
         ],
     )

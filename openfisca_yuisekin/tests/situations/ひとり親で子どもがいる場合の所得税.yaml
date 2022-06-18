@@ -2,22 +2,22 @@
 # We can run this test on our command line using `openfisca-run-test tests/situations/所得税.yaml`
 
 - name: 所得税 for a single parent and a child
-  description: 所得税 should get properly computed across all members of a household
+  description: 所得税 should get properly computed across all members of a 世帯
   period: 2017-01
   absolute_error_margin: 0
   input:
-    household:
+    世帯:
       parents: [ Alicia ]
       children: [ Michael ]
       accommodation_size: 100
       housing_occupancy_status: tenant
     persons:
       Alicia:
-        birth: 1961-01-15
+        誕生年月日: 1961-01-15
         所得:
          2017-01: 2400
       Michael:
-        birth: 2002-01-15
+        誕生年月日: 2002-01-15
         所得:
          2016: 0
   output:
@@ -26,6 +26,6 @@
         所得税: 2160
       Michael:
         所得税: 0
-    household:
+    世帯:
       固定資産税:
         2017: 1000

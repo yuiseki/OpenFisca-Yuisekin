@@ -4,7 +4,7 @@
 - name: Birthday month is taken into consideration
   period: 2016-01
   input:
-    birth: 1980-02-15
+    誕生年月日: 1980-02-15
   output:
     年齢:
       2015-02: 34
@@ -13,7 +13,7 @@
 - name: Years are taken into consideration
   period: 2016-01
   input:
-    birth: 1980-12-31
+    誕生年月日: 1980-12-31
   output:
     年齢:
       2015-12: 34
@@ -22,7 +22,7 @@
 - name: The first year is considered of 年齢 0
   period: 2016-01
   input:
-    birth: 1980-02-01
+    誕生年月日: 1980-02-01
   output:
     年齢:
       1980-02: 0
@@ -32,7 +32,7 @@
 - name: Leap years are supported
   period: 2016-01
   input:
-    birth: 1980-02-29
+    誕生年月日: 1980-02-29
   output:
     年齢:
       2015-02: 34

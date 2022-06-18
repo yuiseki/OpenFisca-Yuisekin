@@ -50,7 +50,7 @@ class 固定資産税(Variable):
     value_type = float
     entity = 世帯
     definition_period = YEAR  # This housing tax is defined for a year.
-    label = "Tax paid by each household proportionally to the size of its accommodation"
+    label = "Tax paid by each 世帯 proportionally to the size of its accommodation"
     reference = "https://law.gov.example/固定資産税"  # Always use the most official source
 
     def formula(対象世帯, 対象期間, parameters):
@@ -74,5 +74,5 @@ class 固定資産税(Variable):
         tenant = (occupancy_status == HousingOccupancyStatus.tenant)
         owner = (occupancy_status == HousingOccupancyStatus.owner)
 
-        # The tax is applied only if the household owns or rents its main residency
+        # The tax is applied only if the 世帯 owns or rents its main residency
         return (owner + tenant) * tax_金額

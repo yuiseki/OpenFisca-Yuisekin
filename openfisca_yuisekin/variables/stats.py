@@ -18,15 +18,15 @@ class 福祉給付(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "Sum of the benefits perceived by a household"
+    label = "Sum of the benefits perceived by a 世帯"
     reference = "https://stats.gov.example/benefits"
 
     def formula(対象世帯, 対象期間, _parameters):
         """Total benefits."""
-        ベーシックインカム_i = 対象世帯.members("ベーシックインカム", 対象期間)  # Calculates the value of ベーシックインカム for each member of the household
+        ベーシックインカム_i = 対象世帯.members("ベーシックインカム", 対象期間)  # Calculates the value of ベーシックインカム for each member of the 世帯
 
         return (
-            + 対象世帯.sum(ベーシックインカム_i)  # Sum the household members ベーシックインカムs
+            + 対象世帯.sum(ベーシックインカム_i)  # Sum the 世帯 members ベーシックインカムs
             + 対象世帯("住宅手当", 対象期間)
             )
 
@@ -35,7 +35,7 @@ class 税金総額(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "Sum of the 税金 paid by a household"
+    label = "Sum of the 税金 paid by a 世帯"
     reference = "https://stats.gov.example/税金"
 
     def formula(対象世帯, 対象期間, _parameters):

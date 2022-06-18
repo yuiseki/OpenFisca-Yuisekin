@@ -39,7 +39,7 @@ check-style:
 
 lint: clean check-syntax-errors check-style
 
-test: clean
+test: clean build
 	openfisca test --country-package openfisca_yuisekin openfisca_yuisekin/tests
 
 serve-local: build

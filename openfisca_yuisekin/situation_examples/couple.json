@@ -23,7 +23,7 @@
             }
         }
     },
-    "households": {
+    "世帯": {
         "_": {
             "parents": ["Alicia", "Javier"],
             "福祉給付": {

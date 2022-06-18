@@ -50,7 +50,7 @@
 - Impacted areas: `openfisca_country_template/variables/benefits.py`.
 - Details:
   - Fixes `児童手当` formula syntax.
-  - Uses vectorial computing to return a `児童手当` 金額 per household.
+  - Uses vectorial computing to return a `児童手当` 金額 per 世帯.
 
 ### 3.12.5 - [#107](https://github.com/openfisca/country-template/pull/107)
 
@@ -240,7 +240,7 @@ A test that was fully specifying its entities like:
 ```yaml
 name: Housing tax
   period: 2017-01
-  households:
+  世帯:
     - parents: [ Alicia ]
       children: [ Michael ]
   persons:
@@ -259,7 +259,7 @@ Becomes:
 name: Housing tax
   period: 2017-01
   input:
-    household:
+    世帯:
       parents: [ Alicia ]
       children: [ Michael ]
     persons:
@@ -444,7 +444,7 @@ Before:
 "persons": {
     "Bill": {}
 },
-"households": {
+"世帯": {
     "_": {
         "parent": ["Bill"]
         "housing_occupancy_status": "Free Lodger"
@@ -458,7 +458,7 @@ Now:
 "persons": {
     "Bill": {}
 },
-"households": {
+"世帯": {
     "_": {
         "parent": ["Bill"]
         "housing_occupancy_status": "free_lodger"

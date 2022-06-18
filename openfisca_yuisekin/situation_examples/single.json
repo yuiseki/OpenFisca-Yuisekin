@@ -9,7 +9,7 @@
             }
         }
     },
-    "households": {
+    "世帯": {
         "_": {
             "parents": ["Alicia"]
         }
