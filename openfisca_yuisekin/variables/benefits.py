@@ -108,8 +108,8 @@ class parenting_allowance(Variable):
         parenting_allowance = parameters(period).benefits.parenting_allowance
 
         世帯収入 = household("世帯収入", period)
-        所得_threshold = parenting_allowance.所得_threshold
-        所得_condition = 世帯収入 <= 所得_threshold
+        所得閾値 = parenting_allowance.所得閾値
+        所得_condition = 世帯収入 <= 所得閾値
 
         is_single = household.nb_persons(Household.PARENT) == 1
         ages = household.members("age", period)

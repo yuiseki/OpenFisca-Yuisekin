@@ -1,6 +1,6 @@
-description: Parenting allowance 所得 threshold
+description: Parenting allowance 所得閾値
 metadata:
-  reference: https://law.gov.example/parenting_allowance/所得_threshold
+  reference: https://law.gov.example/parenting_allowance/所得閾値
   unit: currency-EUR
 values:
   # This parameter is only defined since the 1st of Dec 2015.
