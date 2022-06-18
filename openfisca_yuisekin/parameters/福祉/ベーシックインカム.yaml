@@ -1,10 +1,10 @@
-description: Amount of the ベーシックインカム
+description: 金額 of the ベーシックインカム
 metadata:
-  reference: https://law.gov.example/basic-所得/amount
+  reference: https://law.gov.example/basic-所得/金額
   unit: currency-EUR
 values:
   # This parameter is only defined since the 1st of Dec 2015.
   2015-12-01:
     value: 600.0
     metadata:
-      reference: https://law.gov.example/basic-所得/amount/2015-12
+      reference: https://law.gov.example/basic-所得/金額/2015-12

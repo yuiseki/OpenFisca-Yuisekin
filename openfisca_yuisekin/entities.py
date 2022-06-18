@@ -18,7 +18,7 @@ Household = build_entity(
     Each individual in a group entity has a role (e.g. parent or children). Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), while others can have an unlimited number of individuals (e.g. 'children').
 
     Example:
-    Housing variables (e.g. housing_tax') are usually defined for a group entity such as 'Household'.
+    Housing variables (e.g. 固定資産税') are usually defined for a group entity such as 'Household'.
 
     Usage:
     Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with household.nb_persons(Household.SECOND_PARENT)).

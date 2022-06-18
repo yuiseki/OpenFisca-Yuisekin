@@ -46,5 +46,5 @@ class total_税金(Variable):
         return (
             + household.sum(所得税_i)
             + household.sum(社会保険料_i)
-            + household("housing_tax", period.this_year) / 12
+            + household("固定資産税", period.this_year) / 12
             )

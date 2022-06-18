@@ -50,7 +50,7 @@
 - Impacted areas: `openfisca_country_template/variables/benefits.py`.
 - Details:
   - Fixes `児童手当` formula syntax.
-  - Uses vectorial computing to return a `児童手当` amount per household.
+  - Uses vectorial computing to return a `児童手当` 金額 per household.
 
 ### 3.12.5 - [#107](https://github.com/openfisca/country-template/pull/107)
 
@@ -249,7 +249,7 @@ name: Housing tax
     - id: Michael
         birth: 2002-01-15
   output_variables:
-    housing_tax:
+    固定資産税:
       2017: 1000
 ```
 
@@ -268,7 +268,7 @@ name: Housing tax
       Michael:
         birth: 2002-01-15
   output:
-    housing_tax:
+    固定資産税:
       2017: 1000
 ```
 
@@ -337,7 +337,7 @@ name: Housing tax
 - Impacted periods: all.
 - Impacted areas: `税金`.
 - Details:
-  - Implement housing tax minimal amount.
+  - Implement housing tax minimal 金額.
 
 <!-- -->
 
@@ -479,7 +479,7 @@ name: Household living in a 40 sq. metres accommodation while being free lodgers
     housing_occupancy_status:
       2017-01: 2
   output_variables:
-    housing_tax: 0
+    固定資産税: 0
 ```
 
 Now:
@@ -493,7 +493,7 @@ name: Household living in a 40 sq. metres accommodation while being free lodgers
     housing_occupancy_status:
       2017-01: free_lodger
   output_variables:
-    housing_tax: 0
+    固定資産税: 0
 ```
 
 #### Python API
@@ -573,8 +573,8 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
 
 - Tax and benefit system evolution.
 - Details:
-  - Allow to declare a yearly amount for `所得`.
-  - The yearly amount will be spread over the months contained in the year.
+  - Allow to declare a yearly 金額 for `所得`.
+  - The yearly 金額 will be spread over the months contained in the year.
 
 ### 1.2.1 - [#11](https://github.com/openfisca/country-template/pull/11)
 

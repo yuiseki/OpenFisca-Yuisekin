@@ -108,9 +108,9 @@ class 児童手当(Variable):
         under_6 = household.any(ages < 6)
 
         allowance条件 = 所得条件 * ((is_single * under_8) + under_6)
-        allowance_amount = 児童手当.amount
+        allowance_金額 = 児童手当.金額
 
-        return allowance条件 * allowance_amount
+        return allowance条件 * allowance_金額
 
 
 class 世帯収入(Variable):

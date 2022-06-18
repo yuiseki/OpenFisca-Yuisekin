@@ -12,7 +12,7 @@
     "households": {
         "_": {
             "parents": ["Alicia"],
-            "housing_tax": {
+            "固定資産税": {
                 "2017": null
             },
             "housing_occupancy_status": {

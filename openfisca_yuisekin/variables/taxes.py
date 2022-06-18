@@ -46,12 +46,12 @@ class 社会保険料(Variable):
         return scale.calc(所得)
 
 
-class housing_tax(Variable):
+class 固定資産税(Variable):
     value_type = float
     entity = Household
     definition_period = YEAR  # This housing tax is defined for a year.
     label = "Tax paid by each household proportionally to the size of its accommodation"
-    reference = "https://law.gov.example/housing_tax"  # Always use the most official source
+    reference = "https://law.gov.example/固定資産税"  # Always use the most official source
 
     def formula(household, period, parameters):
         """
@@ -64,8 +64,8 @@ class housing_tax(Variable):
         january = period.first_month
         accommodation_size = household("accommodation_size", january)
 
-        tax_params = parameters(period).税金.housing_tax
-        tax_amount = max_(accommodation_size * tax_params.rate, tax_params.minimal_amount)
+        tax_params = parameters(period).税金.固定資産税
+        tax_金額 = max_(accommodation_size * tax_params.rate, tax_params.minimal_金額)
 
         # `housing_occupancy_status` is an Enum variable
         occupancy_status = household("housing_occupancy_status", january)
@@ -75,4 +75,4 @@ class housing_tax(Variable):
         owner = (occupancy_status == HousingOccupancyStatus.owner)
 
         # The tax is applied only if the household owns or rents its main residency
-        return (owner + tenant) * tax_amount
+        return (owner + tenant) * tax_金額
