@@ -13,11 +13,11 @@
       housing_occupancy_status: tenant
     persons:
       Alicia:
-        birth: 1961-01-15
+        誕生年月日: 1961-01-15
         所得:
          2017-01: 2400
       Michael:
-        birth: 2002-01-15
+        誕生年月日: 2002-01-15
         所得:
          2016: 0
   output:

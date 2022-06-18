@@ -245,9 +245,9 @@ name: Housing tax
       children: [ Michael ]
   persons:
     - id: Alicia
-        birth: 1961-01-15
+        誕生年月日: 1961-01-15
     - id: Michael
-        birth: 2002-01-15
+        誕生年月日: 2002-01-15
   output_variables:
     固定資産税:
       2017: 1000
@@ -264,9 +264,9 @@ name: Housing tax
       children: [ Michael ]
     persons:
       Alicia:
-        birth: 1961-01-15
+        誕生年月日: 1961-01-15
       Michael:
-        birth: 2002-01-15
+        誕生年月日: 2002-01-15
   output:
     固定資産税:
       2017: 1000

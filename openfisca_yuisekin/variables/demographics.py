@@ -35,16 +35,11 @@ class 年齢(Variable):
     label = "人物's age (in years)"
 
     def formula(対象人物, 対象期間, _parameters):
-        """
-        人物's age (in years).
+        誕生年月日 = 対象人物("birth", 対象期間)
+        誕生年 = 誕生年月日.astype("datetime64[Y]").astype(int) + 1970
+        誕生月 = 誕生年月日.astype("datetime64[M]").astype(int) % 12 + 1
+        誕生日 = (誕生年月日 - 誕生年月日.astype("datetime64[M]") + 1).astype(int)
 
-        A person's age is computed according to its birth date.
-        """
-        birth = 対象人物("birth", 対象期間)
-        birth_year = birth.astype("datetime64[Y]").astype(int) + 1970
-        birth_month = birth.astype("datetime64[M]").astype(int) % 12 + 1
-        birth_day = (birth - birth.astype("datetime64[M]") + 1).astype(int)
+        is_birthday_past = (誕生月 < 対象期間.start.month) + (誕生月 == 対象期間.start.month) * (誕生日 <= 対象期間.start.day)
 
-        is_birthday_past = (birth_month < 対象期間.start.month) + (birth_month == 対象期間.start.month) * (birth_day <= 対象期間.start.day)
-
-        return (対象期間.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, subtract one year
+        return (対象期間.start.year - 誕生年) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, subtract one year

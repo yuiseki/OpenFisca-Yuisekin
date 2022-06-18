@@ -32,11 +32,11 @@ class 可処分所得(Variable):
     label = "Actual 金額 available to the person at the end of the month"
     reference = "https://stats.gov.example/可処分所得"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definitions.
 
-    def formula(person, period, _parameters):
+    def formula(対象人物, 対象期間, _parameters):
         """Disposable 所得."""
         return (
-            + person("所得", period)
-            + person("ベーシックインカム", period)
-            - person("所得税", period)
-            - person("社会保険料", period)
+            + 対象人物("所得", 対象期間)
+            + 対象人物("ベーシックインカム", 対象期間)
+            - 対象人物("所得税", 対象期間)
+            - 対象人物("社会保険料", 対象期間)
             )
