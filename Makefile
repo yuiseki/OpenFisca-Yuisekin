@@ -37,7 +37,9 @@ check-style:
 	flake8 `git ls-files | grep "\.py$$"`
 	pylint `git ls-files | grep "\.py$$"`
 
-test: clean check-syntax-errors check-style
+lint: clean check-syntax-errors check-style
+
+test: clean
 	openfisca test --country-package openfisca_yuisekin openfisca_yuisekin/tests
 
 serve-local: build
