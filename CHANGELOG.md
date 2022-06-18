@@ -335,7 +335,7 @@ name: Housing tax
 
 - Tax and benefit system evolution.
 - Impacted periods: all.
-- Impacted areas: `taxes`.
+- Impacted areas: `税金`.
 - Details:
   - Implement housing tax minimal amount.
 
@@ -527,7 +527,7 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
 - Impacted areas: `stats`.
 - Details:
   - Introduce `total_benefits`.
-  - Introduce `total_taxes`.
+  - Introduce `total_税金`.
 
 <!-- -->
 
@@ -611,6 +611,6 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
   - `demographics`.
   - `housing`.
   - `所得`.
-  - `taxes`.
+  - `税金`.
 - Details:
   - Build the skeleton of the tax and benefit system.

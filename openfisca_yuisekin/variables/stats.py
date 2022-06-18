@@ -31,15 +31,15 @@ class total_benefits(Variable):
             )
 
 
-class total_taxes(Variable):
+class total_税金(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
-    label = "Sum of the taxes paid by a household"
-    reference = "https://stats.gov.example/taxes"
+    label = "Sum of the 税金 paid by a household"
+    reference = "https://stats.gov.example/税金"
 
     def formula(household, period, _parameters):
-        """Total taxes."""
+        """Total 税金."""
         所得税_i = household.members("所得税", period)
         social_security_contribution_i = household.members("social_security_contribution", period)
 

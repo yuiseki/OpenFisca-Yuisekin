@@ -29,7 +29,7 @@ class 所得税(Variable):
 
         The formula to compute the 所得税 for a given person at a given period
         """
-        return person("所得", period) * parameters(period).taxes.所得税率
+        return person("所得", period) * parameters(period).税金.所得税率
 
 
 class social_security_contribution(Variable):
@@ -46,7 +46,7 @@ class social_security_contribution(Variable):
         The social_security_contribution is computed according to a marginal scale.
         """
         所得 = person("所得", period)
-        scale = parameters(period).taxes.social_security_contribution
+        scale = parameters(period).税金.social_security_contribution
 
         return scale.calc(所得)
 
@@ -69,7 +69,7 @@ class housing_tax(Variable):
         january = period.first_month
         accommodation_size = household("accommodation_size", january)
 
-        tax_params = parameters(period).taxes.housing_tax
+        tax_params = parameters(period).税金.housing_tax
         tax_amount = max_(accommodation_size * tax_params.rate, tax_params.minimal_amount)
 
         # `housing_occupancy_status` is an Enum variable
