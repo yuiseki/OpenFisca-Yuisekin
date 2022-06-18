@@ -27,7 +27,7 @@ class total_benefits(Variable):
 
         return (
             + household.sum(ベーシックインカム_i)  # Sum the household members ベーシックインカムs
-            + household("housing_allowance", period)
+            + household("住宅手当", period)
             )
 
 

@@ -33,12 +33,12 @@ class ベーシックインカム(Variable):
         return 年齢条件 * 所得条件 * parameters(対象期間).福祉.ベーシックインカム
 
 
-class housing_allowance(Variable):
+class 住宅手当(Variable):
     value_type = float
     entity = Household
     definition_period = MONTH
     label = "Housing allowance"
-    reference = "https://law.gov.example/housing_allowance"  # Always use the most official source
+    reference = "https://law.gov.example/住宅手当"  # Always use the most official source
     end = "2016-11-30"  # This allowance was removed on the 1st of Dec 2016. Calculating it before this date will always return the variable default value, 0.
     unit = "currency-EUR"
     documentation = """
@@ -56,7 +56,7 @@ class housing_allowance(Variable):
         To compute this allowance, the 'rent' value must be provided for the same month,
         but 'housing_occupancy_status' is not necessary.
         """
-        return household("rent", period) * parameters(period).福祉.housing_allowance
+        return household("rent", period) * parameters(period).福祉.住宅手当
 
 
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.

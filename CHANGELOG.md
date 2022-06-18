@@ -316,8 +316,8 @@ name: Housing tax
 
 - Minor change.
 - Details:
-  - Add `documentation` to parameters: `benefits` node and `benefits/housing_allowance`.
-  - Add documentation to `housing_allowance` variable and formula.
+  - Add `documentation` to parameters: `benefits` node and `benefits/住宅手当`.
+  - Add documentation to `住宅手当` variable and formula.
 
 ## 3.3.0 - [#51](https://github.com/openfisca/country-template/pull/51)
 
