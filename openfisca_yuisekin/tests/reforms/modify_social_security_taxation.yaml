@@ -9,7 +9,7 @@
   reforms: openfisca_yuisekin.reforms.modify_social_security_taxation.modify_social_security_taxation
   period: 2017-01
   input:
-    salary: 2000
+    所得: 2000
   output:
     social_security_contribution: 0
 
@@ -17,7 +17,7 @@
   reforms: openfisca_yuisekin.reforms.modify_social_security_taxation.modify_social_security_taxation
   period: 2017-01
   input:
-    salary: 15000
+    所得: 15000
   output:
     social_security_contribution: 1336
 
@@ -25,6 +25,6 @@
   reforms: openfisca_yuisekin.reforms.modify_social_security_taxation.modify_social_security_taxation
   period: 2017-01
   input:
-    salary: 50000
+    所得: 50000
   output:
     social_security_contribution: 8336

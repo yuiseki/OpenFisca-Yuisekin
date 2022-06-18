@@ -16,27 +16,27 @@ from openfisca_yuisekin.entities import Person
 
 
 # This variable is a pure input: it doesn't have a formula
-class salary(Variable):
+class 所得(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    set_input = set_input_divide_by_period  # Optional attribute. Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
-    label = "Salary"
-    reference = "https://law.gov.example/salary"  # Always use the most official source
+    set_input = set_input_divide_by_period  # Optional attribute. Allows user to declare a 所得 for a year. OpenFisca will spread the yearly amount over the months contained in the year.
+    label = "所得"
+    reference = "https://law.gov.example/所得"  # Always use the most official source
 
 
-class disposable_income(Variable):
+class 可処分所得(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
     label = "Actual amount available to the person at the end of the month"
-    reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definitions.
+    reference = "https://stats.gov.example/可処分所得"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definitions.
 
     def formula(person, period, _parameters):
         """Disposable income."""
         return (
-            + person("salary", period)
-            + person("basic_income", period)
-            - person("income_tax", period)
+            + person("所得", period)
+            + person("ベーシックインカム", period)
+            - person("所得税", period)
             - person("social_security_contribution", period)
             )

@@ -23,10 +23,10 @@ class total_benefits(Variable):
 
     def formula(household, period, _parameters):
         """Total benefits."""
-        basic_income_i = household.members("basic_income", period)  # Calculates the value of basic_income for each member of the household
+        ベーシックインカム_i = household.members("ベーシックインカム", period)  # Calculates the value of ベーシックインカム for each member of the household
 
         return (
-            + household.sum(basic_income_i)  # Sum the household members basic incomes
+            + household.sum(ベーシックインカム_i)  # Sum the household members basic incomes
             + household("housing_allowance", period)
             )
 
@@ -40,11 +40,11 @@ class total_taxes(Variable):
 
     def formula(household, period, _parameters):
         """Total taxes."""
-        income_tax_i = household.members("income_tax", period)
+        所得税_i = household.members("所得税", period)
         social_security_contribution_i = household.members("social_security_contribution", period)
 
         return (
-            + household.sum(income_tax_i)
+            + household.sum(所得税_i)
             + household.sum(social_security_contribution_i)
             + household("housing_tax", period.this_year) / 12
             )

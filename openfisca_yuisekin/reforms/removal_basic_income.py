@@ -10,7 +10,7 @@ See https://openfisca.org/doc/key-concepts/reforms.html
 from openfisca_core.reforms import Reform
 
 
-class removal_basic_income(Reform):
+class removal_ベーシックインカム(Reform):
     def apply(self):
         """
         Apply reform.
@@ -18,6 +18,6 @@ class removal_basic_income(Reform):
         A reform always defines an `apply` method that builds the reformed tax and benefit system from the reference one.
         See https://openfisca.org/doc/coding-the-legislation/reforms.html#writing-a-reform
 
-        Our reform neutralizes the `basic_income` variable. When this reform is applied, calculating `basic_income` will always return its default value, 0.
+        Our reform neutralizes the `ベーシックインカム` variable. When this reform is applied, calculating `ベーシックインカム` will always return its default value, 0.
         """
-        self.neutralize_variable("basic_income")
+        self.neutralize_variable("ベーシックインカム")

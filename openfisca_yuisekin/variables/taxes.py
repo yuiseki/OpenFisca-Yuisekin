@@ -16,12 +16,12 @@ from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import Household, Person
 
 
-class income_tax(Variable):
+class 所得税(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
     label = "Income tax"
-    reference = "https://law.gov.example/income_tax"  # Always use the most official source
+    reference = "https://law.gov.example/所得税"  # Always use the most official source
 
     def formula(person, period, parameters):
         """
@@ -29,7 +29,7 @@ class income_tax(Variable):
 
         The formula to compute the income tax for a given person at a given period
         """
-        return person("salary", period) * parameters(period).taxes.income_tax_rate
+        return person("所得", period) * parameters(period).taxes.所得税率
 
 
 class social_security_contribution(Variable):
@@ -45,10 +45,10 @@ class social_security_contribution(Variable):
 
         The social_security_contribution is computed according to a marginal scale.
         """
-        salary = person("salary", period)
+        所得 = person("所得", period)
         scale = parameters(period).taxes.social_security_contribution
 
-        return scale.calc(salary)
+        return scale.calc(所得)
 
 
 class housing_tax(Variable):

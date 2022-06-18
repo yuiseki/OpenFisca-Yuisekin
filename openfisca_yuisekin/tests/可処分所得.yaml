@@ -1,65 +1,65 @@
 # Test files describe situations and their expected outcomes
-# We can run this test on our command line using `openfisca-run-test disposable_income.yaml`
+# We can run this test on our command line using `openfisca-run-test 可処分所得.yaml`
 
-- name: Person earning no salary in Jan 2015
+- name: Person earning no 所得 in Jan 2015
   period: 2015-01
   input:
-    salary: 0
+    所得: 0
   output:
-    disposable_income: 0
+    可処分所得: 0
 
 - name: Person earning 2500 in Jan 2015
   period: 2015-01
   input:
-    salary: 2500
+    所得: 2500
   output:
-    disposable_income: 150
+    可処分所得: 150
 
 - name: Person earning 10000 in Jan 2015
   period: 2015-01
   input:
-    salary: 10000
+    所得: 10000
   output:
-    disposable_income: 600
+    可処分所得: 600
 
-- name: Person earning no salary in Jan 2016
+- name: Person earning no 所得 in Jan 2016
   period: 2016-01
   input:
-    salary: 0
+    所得: 0
   output:
-    disposable_income: 600
+    可処分所得: 600
 
 - name: Person earning 2500 in Jan 2016
   period: 2016-01
   input:
-    salary: 2500
+    所得: 2500
   output:
-    disposable_income: 150
+    可処分所得: 150
 
 - name: Person earning 10000 in Jan 2016
   period: 2016-01
   input:
-    salary: 10000
+    所得: 10000
   output:
-    disposable_income: 600
+    可処分所得: 600
 
-- name: Person earning no salary in Jan 2017
+- name: Person earning no 所得 in Jan 2017
   period: 2017-01
   input:
-    salary: 0
+    所得: 0
   output:
-    disposable_income: 600
+    可処分所得: 600
 
 - name: Person earning 2500 in Jan 2017
   period: 2017-01
   input:
-    salary: 2500
+    所得: 2500
   output:
-    disposable_income: 800
+    可処分所得: 800
 
 - name: Person earning 10000 in Jan 2017
   period: 2017-01
   input:
-    salary: 10000
+    所得: 10000
   output:
-    disposable_income: 1240
+    可処分所得: 1240

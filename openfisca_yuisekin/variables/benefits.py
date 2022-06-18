@@ -14,12 +14,12 @@ from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import Household, Person
 
 
-class basic_income(Variable):
+class ベーシックインカム(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
     label = "Basic income provided to adults"
-    reference = "https://law.gov.example/basic_income"  # Always use the most official source
+    reference = "https://law.gov.example/ベーシックインカム"  # Always use the most official source
 
     def formula_2016_12(person, period, parameters):
         """
@@ -28,7 +28,7 @@ class basic_income(Variable):
         Since Dec 1st 2016, the basic income is provided to any adult, without considering their income.
         """
         age_condition = person("age", period) >= parameters(period).general.age_of_majority
-        return age_condition * parameters(period).benefits.basic_income  # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
+        return age_condition * parameters(period).benefits.ベーシックインカム  # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
 
     def formula_2015_12(person, period, parameters):
         """
@@ -38,8 +38,8 @@ class basic_income(Variable):
         Before Dec 1st 2015, the basic income does not exist in the law, and calculating it returns its default value, which is 0.
         """
         age_condition = person("age", period) >= parameters(period).general.age_of_majority
-        salary_condition = person("salary", period) == 0
-        return age_condition * salary_condition * parameters(period).benefits.basic_income  # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
+        所得_condition = person("所得", period) == 0
+        return age_condition * 所得_condition * parameters(period).benefits.ベーシックインカム  # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
 
 
 class housing_allowance(Variable):
@@ -130,5 +130,5 @@ class household_income(Variable):
 
     def formula(household, period, _parameters):
         """A household's income."""
-        salaries = household.members("salary", period)
+        salaries = household.members("所得", period)
         return household.sum(salaries)
