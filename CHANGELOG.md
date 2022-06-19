@@ -83,7 +83,7 @@
 - Impacted areas: tests/variables and parameters.
 - Details:
   - Add a new variable called 児童扶養手当 to show how group entities and single entities can be used together.
-  - This variable calls the 世帯収入 variable.
+  - This variable calls the 世帯所得 variable.
 
 ### 3.12.1 -
 

@@ -83,9 +83,9 @@ class 児童扶養手当(Variable):
     def formula(対象世帯, 対象期間, parameters):
         児童扶養手当 = parameters(対象期間).福祉.児童扶養手当
 
-        世帯収入 = 対象世帯("世帯収入", 対象期間)
+        世帯所得 = 対象世帯("世帯所得", 対象期間)
         世帯所得上限 = 児童扶養手当.世帯所得上限
-        所得条件 = 世帯収入 <= 世帯所得上限
+        所得条件 = 世帯所得 <= 世帯所得上限
 
         ひとり親である = 対象世帯.nb_persons(世帯.保護者) == 1
         児童一覧の年齢 = 対象世帯.members("年齢", 対象期間)
@@ -98,7 +98,7 @@ class 児童扶養手当(Variable):
         return 手当条件 * 手当金額
 
 
-class 世帯収入(Variable):
+class 世帯所得(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
