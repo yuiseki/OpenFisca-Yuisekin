@@ -11,7 +11,7 @@
       children: [ Michael ]
       accommodation_size: 100
       housing_occupancy_status: tenant
-    persons:
+    人物:
       Alicia:
         誕生年月日: 1961-01-15
         所得:
@@ -21,7 +21,7 @@
         所得:
          2016: 0
   output:
-    persons:
+    人物:
       Alicia:
         所得税: 2160
       Michael:

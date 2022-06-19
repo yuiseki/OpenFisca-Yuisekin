@@ -9,7 +9,7 @@
     世帯:
       parents: [Phil, Saz]
       children: [Caz, Eille, Nimasay]
-    persons:
+    人物:
       Phil:
         誕生年月日: 1981-01-15
         所得:

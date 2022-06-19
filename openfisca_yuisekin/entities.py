@@ -1,7 +1,7 @@
 """
 This file defines the entities needed by our legislation.
 
-税金 and benefits can be calculated for different entities: persons, 世帯, companies, etc.
+税金 and benefits can be calculated for different entities: 人物, 世帯, companies, etc.
 
 See https://openfisca.org/doc/key-concepts/person,_entities,_role.html
 """
@@ -21,7 +21,7 @@ from openfisca_core.entities import build_entity
     Housing variables (e.g. 固定資産税') are usually defined for a group entity such as '世帯'.
 
     Usage:
-    Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with 世帯.nb_persons(世帯.SECOND_PARENT)).
+    Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with 世帯.nb_人物(世帯.SECOND_PARENT)).
     Calculate a variable applied to each individual of the group entity (e.g. calculate the '所得' of each member of the '世帯' with salaries = 世帯.members("所得", period = MONTH); sum_salaries = 世帯.sum(salaries)).
 
     For more information, see: https://openfisca.org/doc/coding-the-legislation/50_entities.html
@@ -46,7 +46,7 @@ from openfisca_core.entities import build_entity
 
 人物 = build_entity(
     key = "person",
-    plural = "persons",
+    plural = "人物",
     label = "An individual. The minimal legal entity on which a legislation might be applied.",
     doc = """
 

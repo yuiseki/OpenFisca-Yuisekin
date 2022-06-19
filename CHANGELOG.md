@@ -243,7 +243,7 @@ name: Housing tax
   世帯:
     - parents: [ Alicia ]
       children: [ Michael ]
-  persons:
+  人物:
     - id: Alicia
         誕生年月日: 1961-01-15
     - id: Michael
@@ -262,7 +262,7 @@ name: Housing tax
     世帯:
       parents: [ Alicia ]
       children: [ Michael ]
-    persons:
+    人物:
       Alicia:
         誕生年月日: 1961-01-15
       Michael:
@@ -441,7 +441,7 @@ _Note: the 2.0.0 version has been unpublished due to performance issues._
 Before:
 
 ```
-"persons": {
+"人物": {
     "Bill": {}
 },
 "世帯": {
@@ -455,7 +455,7 @@ Before:
 Now:
 
 ```
-"persons": {
+"人物": {
     "Bill": {}
 },
 "世帯": {
