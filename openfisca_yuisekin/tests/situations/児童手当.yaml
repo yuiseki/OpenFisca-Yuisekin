@@ -7,9 +7,9 @@
   absolute_error_margin: 0
   input:
     世帯:
-      parents: [Phil, Saz]
-      children: [Caz, Eille, Nimasay]
-    人物:
+      親たち: [Phil, Saz]
+      子どもたち: [Caz, Eille, Nimasay]
+    世帯員:
       Phil:
         誕生年月日: 1981-01-15
         所得:

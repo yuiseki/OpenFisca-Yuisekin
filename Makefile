@@ -16,7 +16,7 @@ install: deps
 	@# This allows contributors to test as they code.
 	pip install -e '.[dev]' --upgrade --use-deprecated=legacy-resolver
 
-build: clean deps
+build:
 	@# Install OpenFisca-Extension-Template for deployment and publishing.
 	@# `make build` allows us to be be sure tests are run against the packaged version
 	@# of OpenFisca-Extension-Template, the same we put in the hands of users and reusers.

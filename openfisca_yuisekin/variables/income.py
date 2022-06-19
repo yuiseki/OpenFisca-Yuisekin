@@ -29,7 +29,7 @@ class 可処分所得(Variable):
     value_type = float
     entity = 人物
     definition_period = MONTH
-    label = "Actual 金額 available to the person at the end of the month"
+    label = "Actual 金額 available to the 人物 at the end of the month"
     reference = "https://stats.gov.example/可処分所得"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definitions.
 
     def formula(対象人物, 対象期間, _parameters):

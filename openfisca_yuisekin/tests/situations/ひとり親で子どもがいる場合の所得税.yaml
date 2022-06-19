@@ -7,11 +7,11 @@
   absolute_error_margin: 0
   input:
     世帯:
-      parents: [ Alicia ]
-      children: [ Michael ]
+      親たち: [ Alicia ]
+      子どもたち: [ Michael ]
       accommodation_size: 100
       housing_occupancy_status: tenant
-    人物:
+    世帯員:
       Alicia:
         誕生年月日: 1961-01-15
         所得:
@@ -21,7 +21,7 @@
         所得:
          2016: 0
   output:
-    人物:
+    世帯員:
       Alicia:
         所得税: 2160
       Michael:

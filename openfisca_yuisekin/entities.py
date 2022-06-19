@@ -3,7 +3,7 @@ This file defines the entities needed by our legislation.
 
 税金 and benefits can be calculated for different entities: 人物, 世帯, companies, etc.
 
-See https://openfisca.org/doc/key-concepts/person,_entities,_role.html
+See https://openfisca.org/doc/key-concepts/人物,_entities,_role.html
 """
 
 from openfisca_core.entities import build_entity
@@ -28,33 +28,33 @@ from openfisca_core.entities import build_entity
     """,
     roles = [
         {
-            "key": "parent",
-            "plural": "parents",
-            "label": "Parents",
+            "key": "親",
+            "plural": "親たち",
+            "label": "親",
             "max": 2,
             "subroles": ["first_parent", "second_parent"],
             "doc": "The one or two adults in charge of the 世帯.",
             },
         {
-            "key": "child",
-            "plural": "children",
-            "label": "Child",
+            "key": "子ども",
+            "plural": "子どもたち",
+            "label": "子ども",
             "doc": "Other individuals living in the 世帯.",
             },
         ],
     )
 
 人物 = build_entity(
-    key = "person",
-    plural = "人物",
+    key = "人物",
+    plural = "世帯員",
     label = "An individual. The minimal legal entity on which a legislation might be applied.",
     doc = """
 
     Variables like '所得' and '所得税' are usually defined for the entity '人物'.
 
     Usage:
-    Calculate a variable applied to a '人物' (e.g. access the '所得' of a specific month with person("所得", "2017-05")).
-    Check the role of a '人物' in a group entity (e.g. check if a the '人物' is a 'first_parent' in a '世帯' entity with person.has_role(世帯.FIRST_PARENT)).
+    Calculate a variable applied to a '人物' (e.g. access the '所得' of a specific month with 人物("所得", "2017-05")).
+    Check the role of a '人物' in a group entity (e.g. check if a the '人物' is a 'first_parent' in a '世帯' entity with 人物.has_role(世帯.FIRST_PARENT)).
 
     For more information, see: https://openfisca.org/doc/coding-the-legislation/50_entities.html
     """,

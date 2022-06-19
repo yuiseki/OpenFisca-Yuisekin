@@ -64,7 +64,7 @@ class 年金(Variable):
     value_type = float
     entity = 人物
     definition_period = MONTH
-    label = "年金 for the elderly. 年金 attribuée aux personnes âgées. تقاعد."
+    label = "年金 for the elderly. 年金 attribuée aux 人物nes âgées. تقاعد."
     reference = ["https://fr.wikipedia.org/wiki/Retraite_(économie)", "https://ar.wikipedia.org/wiki/تقاعد"]
 
     def formula(対象人物, 対象期間, parameters):
@@ -87,7 +87,7 @@ class 児童手当(Variable):
         所得閾値 = 児童手当.所得閾値
         所得条件 = 世帯収入 <= 所得閾値
 
-        ひとり親 = 対象世帯.nb_persons(世帯.PARENT) == 1
+        ひとり親 = 対象世帯.nb_persons(世帯.親) == 1
         子どもたちの年齢 = 対象世帯.members("年齢", 対象期間)
         八歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 8)
         六歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 6)
