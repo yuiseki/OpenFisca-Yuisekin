@@ -34,8 +34,8 @@ class rent(Variable):
 # Possible values for the 居住状況 variable, defined further down
 # See more at <https://openfisca.org/doc/coding-the-legislation/20_input_variables.html#advanced-example-enumerations-enum>
 class HousingOccupancyStatus(Enum):
-    __order__ = "owner 借家 free_lodger homeless"
-    owner = "Owner"
+    __order__ = "持ち家 借家 free_lodger homeless"
+    持ち家 = "持ち家"
     借家 = "借家"
     free_lodger = "Free lodger"
     homeless = "Homeless"
