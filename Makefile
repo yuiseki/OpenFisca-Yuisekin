@@ -1,4 +1,4 @@
-all: test
+all: build test
 
 uninstall:
 	pip freeze | grep -v "^-e" | xargs pip uninstall -y
@@ -39,7 +39,7 @@ check-style:
 
 lint: clean check-syntax-errors check-style
 
-test: build
+test:
 	openfisca test --country-package openfisca_yuisekin openfisca_yuisekin/tests
 
 serve-local: build

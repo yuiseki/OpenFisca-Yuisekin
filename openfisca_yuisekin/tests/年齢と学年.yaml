@@ -1,0 +1,63 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test 年齢.yaml`
+
+- name: 生まれた年の年齢は0歳である
+  period: 2016-01
+  input:
+    誕生年月日: 1980-02-01
+  output:
+    年齢:
+      1980-02: 0
+      1980-03: 0
+      1981-03: 1
+
+- name: 誕生日を過ぎたら年齢が上がる
+  period: 2022-06
+  input:
+    誕生年月日: 1980-02-15
+  output:
+    年齢:
+      2015-02: 34
+      2015-03: 35
+
+- name: 大晦日に生まれた人も年齢が上がる
+  period: 2016-01
+  input:
+    誕生年月日: 1980-12-31
+  output:
+    年齢:
+      2015-12: 34
+      2016-01: 35
+
+- name: 誕生日が閏日でも適切に年齢が上がる
+  period: 2022-01
+  input:
+    誕生年月日: 2000-02-29
+  output:
+    年齢:
+      2015-02: 14
+      2015-03: 15
+
+- name: 早生まれではない人物の年齢と学年
+  period: 2022-01
+  input:
+    誕生年月日: 2010-05-10
+  output:
+    年齢:
+      2016-04: 5
+      2016-06: 6
+    学年:
+      2016-03-01: 6
+      2016-04-01: 7
+
+- name: 早生まれの人物の年齢と学年
+  period: 2022-01
+  input:
+    誕生年月日: 2010-02-02
+  output:
+    年齢:
+      2016-03: 6
+      2016-04: 6
+    学年:
+      2016-03-01: 6
+      2016-04-01: 7
