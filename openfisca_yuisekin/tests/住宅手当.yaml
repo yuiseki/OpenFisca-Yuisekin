@@ -4,13 +4,13 @@
 - name: In january 2016, a 世帯 paying 400 of rent gets an allowance of 100
   period: 2016-01
   input:
-    rent: 400
+    家賃: 400
   output:
     住宅手当: 100
 
 - name: The 住宅手当 disappeared in Dec 2016
   period: 2016-12
   input:
-    rent: 400
+    家賃: 400
   output:
     住宅手当: 0
