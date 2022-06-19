@@ -71,8 +71,8 @@ class 固定資産税(Variable):
         居住状況 = 対象世帯("居住状況", january)
         HousingOccupancyStatus = 居住状況.possible_values  # Get the enum associated with the variable
         # To access an enum element, we use the `.` notation.
-        tenant = (居住状況 == HousingOccupancyStatus.tenant)
+        借家 = (居住状況 == HousingOccupancyStatus.借家)
         owner = (居住状況 == HousingOccupancyStatus.owner)
 
         # The tax is applied only if the 世帯 owns or rents its main residency
-        return (owner + tenant) * tax_金額
+        return (owner + 借家) * tax_金額
