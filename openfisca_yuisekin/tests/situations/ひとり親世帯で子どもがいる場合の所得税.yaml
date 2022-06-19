@@ -9,8 +9,8 @@
     世帯:
       親たち: [ 花子 ]
       子どもたち: [ 一郎 ]
-      accommodation_size: 100
-      housing_occupancy_status: tenant
+      課税床面積: 100
+      居住状況: tenant
     世帯員:
       花子:
         誕生年月日: 1961-01-15

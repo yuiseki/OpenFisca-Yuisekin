@@ -57,22 +57,22 @@ class 固定資産税(Variable):
         """
         Housing tax.
 
-        The housing tax is defined for a year, but depends on the `accommodation_size` and `housing_occupancy_status` on the first month of the year.
+        The housing tax is defined for a year, but depends on the `課税床面積` and `居住状況` on the first month of the year.
         Here period is a year. We can get the first month of a year with the following shortcut.
         To build different periods, see https://openfisca.org/doc/coding-the-legislation/35_periods.html#calculate-dependencies-for-a-specific-period
         """
         january = 対象期間.first_month
-        accommodation_size = 対象世帯("accommodation_size", january)
+        課税床面積 = 対象世帯("課税床面積", january)
 
         tax_params = parameters(対象期間).税金.固定資産税
-        tax_金額 = max_(accommodation_size * tax_params.rate, tax_params.minimal_金額)
+        tax_金額 = max_(課税床面積 * tax_params.rate, tax_params.minimal_金額)
 
-        # `housing_occupancy_status` is an Enum variable
-        occupancy_status = 対象世帯("housing_occupancy_status", january)
-        HousingOccupancyStatus = occupancy_status.possible_values  # Get the enum associated with the variable
+        # `居住状況` is an Enum variable
+        居住状況 = 対象世帯("居住状況", january)
+        HousingOccupancyStatus = 居住状況.possible_values  # Get the enum associated with the variable
         # To access an enum element, we use the `.` notation.
-        tenant = (occupancy_status == HousingOccupancyStatus.tenant)
-        owner = (occupancy_status == HousingOccupancyStatus.owner)
+        tenant = (居住状況 == HousingOccupancyStatus.tenant)
+        owner = (居住状況 == HousingOccupancyStatus.owner)
 
         # The tax is applied only if the 世帯 owns or rents its main residency
         return (owner + tenant) * tax_金額

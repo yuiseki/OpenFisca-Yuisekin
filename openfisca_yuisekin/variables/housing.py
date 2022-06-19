@@ -16,7 +16,7 @@ from openfisca_yuisekin.entities import 世帯
 
 
 # This variable is a pure input: it doesn't have a formula
-class accommodation_size(Variable):
+class 課税床面積(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
@@ -31,7 +31,7 @@ class rent(Variable):
     label = "Rent paid by the 世帯"
 
 
-# Possible values for the housing_occupancy_status variable, defined further down
+# Possible values for the 居住状況 variable, defined further down
 # See more at <https://openfisca.org/doc/coding-the-legislation/20_input_variables.html#advanced-example-enumerations-enum>
 class HousingOccupancyStatus(Enum):
     __order__ = "owner tenant free_lodger homeless"
@@ -41,7 +41,7 @@ class HousingOccupancyStatus(Enum):
     homeless = "Homeless"
 
 
-class housing_occupancy_status(Variable):
+class 居住状況(Variable):
     value_type = Enum
     possible_values = HousingOccupancyStatus
     default_value = HousingOccupancyStatus.tenant

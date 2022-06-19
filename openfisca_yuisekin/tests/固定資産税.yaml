@@ -4,9 +4,9 @@
 - name: Tenant living in a 40 sq. metres accommodation
   period: 2022
   input:
-    accommodation_size:
+    課税床面積:
       2022-01: 40
-    housing_occupancy_status:
+    居住状況:
       2022-01: tenant
   output:
     固定資産税: 400

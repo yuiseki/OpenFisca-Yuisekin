@@ -404,7 +404,7 @@ name: Housing tax
 - Impacted periods: all.
 - Impacted areas: `housing`.
 - Details:
-  - Fix spelling by renaming `accomodation_size` variable to `accommodation_size`.
+  - Fix spelling by renaming `accomodation_size` variable to `課税床面積`.
 
 #### Other changes
 
@@ -433,7 +433,7 @@ _Note: the 2.0.0 version has been unpublished due to performance issues._
 - Details:
   - Upgrade to Core v21.
   - Introduce the use of a string identifier to reference Enum items.
-  - When setting an Enum (e.g. housing_occupancy_status), set the relevant string identifier (e.g. `free_lodger`). Indexes (e.g.`2`) and phrases (e.g. `Free Lodgers`) cannot be used anymore.
+  - When setting an Enum (e.g. 居住状況), set the relevant string identifier (e.g. `free_lodger`). Indexes (e.g.`2`) and phrases (e.g. `Free Lodgers`) cannot be used anymore.
   - The default value is indicated for each Enum variable instead of being implicitly the first item of the enum.
 
 #### Web API request/response
@@ -447,7 +447,7 @@ Before:
 "世帯": {
     "_": {
         "parent": ["Bill"]
-        "housing_occupancy_status": "Free Lodger"
+        "居住状況": "Free Lodger"
     }
 }
 ```
@@ -461,7 +461,7 @@ Now:
 "世帯": {
     "_": {
         "parent": ["Bill"]
-        "housing_occupancy_status": "free_lodger"
+        "居住状況": "free_lodger"
     }
 }
 ```
@@ -474,9 +474,9 @@ Before:
 name: 世帯 living in a 40 sq. metres accommodation while being free lodgers
   period: 2017
   input_variables:
-    accommodation_size:
+    課税床面積:
       2017-01: 40
-    housing_occupancy_status:
+    居住状況:
       2017-01: 2
   output_variables:
     固定資産税: 0
@@ -488,9 +488,9 @@ Now:
 name: 世帯 living in a 40 sq. metres accommodation while being free lodgers
   period: 2017
   input_variables:
-    accommodation_size:
+    課税床面積:
       2017-01: 40
-    housing_occupancy_status:
+    居住状況:
       2017-01: free_lodger
   output_variables:
     固定資産税: 0
@@ -559,7 +559,7 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
 
 - Tax and benefit system evolution.
 - Details:
-  - Introduce `housing_occupancy_status`.
+  - Introduce `居住状況`.
   - Take the housing occupancy status into account in the housing tax.
 
 ### 1.2.3 - [#9](https://github.com/openfisca/country-template/pull/9)

@@ -54,7 +54,7 @@ class 住宅手当(Variable):
         Calculating it before this date will always return the variable default value, 0.
 
         To compute this allowance, the 'rent' value must be provided for the same month,
-        but 'housing_occupancy_status' is not necessary.
+        but '居住状況' is not necessary.
         """
         return 対象世帯("rent", 対象期間) * parameters(対象期間).福祉.住宅手当
 
