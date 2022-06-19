@@ -24,7 +24,7 @@ class 課税床面積(Variable):
 
 
 # This variable is a pure input: it doesn't have a formula
-class rent(Variable):
+class 家賃(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH

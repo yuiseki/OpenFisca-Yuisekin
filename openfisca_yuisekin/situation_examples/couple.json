@@ -25,7 +25,7 @@
     },
     "世帯": {
         "_": {
-            "parents": ["Alicia", "Javier"],
+            "保護者一覧": ["Alicia", "Javier"],
             "福祉給付": {
                 "2017-01": null
             },

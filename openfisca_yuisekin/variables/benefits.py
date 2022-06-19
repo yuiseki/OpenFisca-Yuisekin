@@ -56,7 +56,7 @@ class 住宅手当(Variable):
         To compute this allowance, the 'rent' value must be provided for the same month,
         but '居住状況' is not necessary.
         """
-        return 対象世帯("rent", 対象期間) * parameters(対象期間).福祉.住宅手当
+        return 対象世帯("家賃", 対象期間) * parameters(対象期間).福祉.住宅手当
 
 
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.

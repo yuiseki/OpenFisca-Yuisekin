@@ -2,7 +2,7 @@
 # We can run this test on our command line using `openfisca-run-test tests/situations/所得税.yaml`
 
 - name: Parenting allowance for a two parent 世帯 with little 所得
-  description: Parenting allowance relies on the 所得s on the parents and 年齢s of the children
+  description: Parenting allowance relies on the 所得s on the 保護者一覧 and 年齢s of the children
   period: 2020-01
   absolute_error_margin: 0
   input:

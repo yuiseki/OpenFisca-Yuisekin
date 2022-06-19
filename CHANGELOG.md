@@ -241,7 +241,7 @@ A test that was fully specifying its entities like:
 name: Housing tax
   period: 2017-01
   世帯:
-    - parents: [ Alicia ]
+    - 保護者一覧: [ Alicia ]
       children: [ Michael ]
   人物:
     - id: Alicia
@@ -260,7 +260,7 @@ name: Housing tax
   period: 2017-01
   input:
     世帯:
-      parents: [ Alicia ]
+      保護者一覧: [ Alicia ]
       children: [ Michael ]
     人物:
       Alicia:
