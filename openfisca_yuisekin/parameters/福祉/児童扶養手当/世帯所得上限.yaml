@@ -1,6 +1,6 @@
-description: Parenting allowance 所得閾値
+description: Parenting allowance 世帯所得上限
 metadata:
-  reference: https://law.gov.example/児童手当/所得閾値
+  reference: https://law.gov.example/児童扶養手当/世帯所得上限
   unit: currency-EUR
 values:
   # This parameter is only defined since the 1st of Dec 2015.

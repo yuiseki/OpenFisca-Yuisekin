@@ -72,28 +72,28 @@ class 年金(Variable):
         return 年齢条件
 
 
-class 児童手当(Variable):
+class 児童扶養手当(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "低所得世帯への児童手当"
+    label = "低所得世帯への児童扶養手当"
     documentation = "実際のオーストラリアの制度を参考にしている"
     reference = "https://www.servicesaustralia.gov.au/individuals/services/centrelink/parenting-payment/who-can-get-it"
 
     def formula(対象世帯, 対象期間, parameters):
-        児童手当 = parameters(対象期間).福祉.児童手当
+        児童扶養手当 = parameters(対象期間).福祉.児童扶養手当
 
         世帯収入 = 対象世帯("世帯収入", 対象期間)
-        所得閾値 = 児童手当.所得閾値
-        所得条件 = 世帯収入 <= 所得閾値
+        世帯所得上限 = 児童扶養手当.世帯所得上限
+        所得条件 = 世帯収入 <= 世帯所得上限
 
-        ひとり親 = 対象世帯.nb_persons(世帯.親) == 1
-        子どもたちの年齢 = 対象世帯.members("年齢", 対象期間)
-        八歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 8)
-        六歳未満の子どもがいる = 対象世帯.any(子どもたちの年齢 < 6)
+        ひとり親である = 対象世帯.nb_persons(世帯.保護者) == 1
+        児童一覧の年齢 = 対象世帯.members("年齢", 対象期間)
+        八歳未満の児童がいる = 対象世帯.any(児童一覧の年齢 < 8)
+        六歳未満の児童がいる = 対象世帯.any(児童一覧の年齢 < 6)
 
-        手当条件 = 所得条件 * ((ひとり親 * 八歳未満の子どもがいる) + 六歳未満の子どもがいる)
-        手当金額 = 児童手当.金額
+        手当条件 = 所得条件 * ((ひとり親である * 八歳未満の児童がいる) + 六歳未満の児童がいる)
+        手当金額 = 児童扶養手当.金額
 
         return 手当条件 * 手当金額
 
@@ -105,6 +105,6 @@ class 世帯収入(Variable):
     label = "The sum of the salaries of those living in a 世帯"
 
     def formula(対象世帯, 対象期間, _parameters):
-        """A 世帯's 所得."""
+        """世帯全員の収入"""
         各収入 = 対象世帯.members("所得", 対象期間)
         return 対象世帯.sum(各収入)
