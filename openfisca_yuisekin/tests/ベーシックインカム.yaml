@@ -15,7 +15,7 @@
     所得: 0
     年齢: 18
   output:
-    ベーシックインカム: 0
+    ベーシックインカム: 1000
 
 - name: In Dec 2015, a child with no 所得 should get no ベーシックインカム
   period: 2015-12
@@ -23,7 +23,7 @@
     所得: 0
     年齢: 17
   output:
-    ベーシックインカム: 1000
+    ベーシックインカム: 0
 
 - name: In Dec 2015, an adult with a 所得 should get no ベーシックインカム
   period: 2015-12
@@ -31,7 +31,7 @@
     所得: 1200
     年齢: 18
   output:
-    ベーシックインカム: 1000
+    ベーシックインカム: 0
 
 - name: In Dec 2016, a child with no 所得 should get no ベーシックインカム
   period: 2016-12

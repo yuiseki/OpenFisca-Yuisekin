@@ -27,7 +27,7 @@
   input:
     所得: 0
   output:
-    可処分所得: 600
+    可処分所得: 1000
 
 - name: 人物 earning 2500 in Jan 2016
   period: 2016-01
@@ -48,18 +48,18 @@
   input:
     所得: 0
   output:
-    可処分所得: 600
+    可処分所得: 1000
 
 - name: 人物 earning 2500 in Jan 2017
   period: 2017-01
   input:
     所得: 2500
   output:
-    可処分所得: 800
+    可処分所得: 1200
 
 - name: 人物 earning 10000 in Jan 2017
   period: 2017-01
   input:
     所得: 10000
   output:
-    可処分所得: 1240
+    可処分所得: 1640
