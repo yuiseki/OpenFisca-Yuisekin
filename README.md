@@ -5,18 +5,24 @@
 ### 前提
 
 - https://scrapbox.io/c4j/GitHubでの共同開発への参加の準備
-  - Git をセットアップする
   - GitHub にユーザー登録する
+  - GitHub Desktop または Git コマンド をセットアップする
   - Docker をセットアップする
 
-### リポジトリを `git clone` する
+### リポジトリを GitHub で自分のアカウントへ Fork して、 `git clone` する
+
+#### GitHub Desktop をセットアップしている場合
+
+- GitHub Desktop で「OpenFisca-Yuisekin」を Clone する
+
+#### Git コマンドをセットアップしている場合
 
 ```
-git clone git@github.com:yuiseki/OpenFisca-Yuisekin.git
+git clone git@github.com:あなたのGitHubユーザー名/OpenFisca-Yuisekin.git
 cd OpenFisca-Yuisekin
 ```
 
-### Docker をビルドする
+### Docker イメージをビルドする
 
 ```
 docker compose build
@@ -25,8 +31,7 @@ docker compose build
 ### テストを実行する
 
 ```
-docker compose run --rm openfisca make build
-docker compose run --rm openfisca make test
+docker compose run --rm openfisca bash -c "make build && make test"
 ```
 
 ## API サーバーとして動かす
