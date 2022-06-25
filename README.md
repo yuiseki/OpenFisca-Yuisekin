@@ -2,7 +2,12 @@
 
 ## 開発参加方法
 
-### Docker をセットアップする
+### 前提
+
+- https://scrapbox.io/c4j/GitHubでの共同開発への参加の準備
+  - Git をセットアップする
+  - GitHub にユーザー登録する
+  - Docker をセットアップする
 
 ### リポジトリを `git clone` する
 
@@ -20,6 +25,7 @@ docker compose build
 ### テストを実行する
 
 ```
+docker compose run --rm openfisca make build
 docker compose run --rm openfisca make test
 ```
 
