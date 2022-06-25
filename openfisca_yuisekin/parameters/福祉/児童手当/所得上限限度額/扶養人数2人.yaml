@@ -1,0 +1,9 @@
+description: 児童手当の所得上限限度額
+metadata:
+  reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/teate_gendogaku.html
+  unit: currency-JPY
+values:
+  2022-05-01:
+    value: 9340000
+    metadata:
+      reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/teate_gendogaku.html
