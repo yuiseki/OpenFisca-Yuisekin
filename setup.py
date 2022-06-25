@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 
 # Read the contents of our README file for PyPi
 this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text()  # pylint: disable=W1514
+long_description = (this_directory / "README.md").read_text(encoding="utf-8")  # pylint: disable=W1514
 
 setup(
     name = "OpenFisca-Yuisekin",
