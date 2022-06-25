@@ -30,11 +30,13 @@ class 誕生年月日(Variable):
     definition_period = ETERNITY  # This variable cannot change over time.
     reference = "https://en.wiktionary.org/wiki/birthdate"
 
+
 class 死亡年月日(Variable):
     value_type = date
     entity = 人物
     label = "人物の死亡年月日"
     definition_period = ETERNITY  # This variable cannot change over time.
+
 
 class 年齢(Variable):
     value_type = int
@@ -69,9 +71,8 @@ class 学年(Variable):
         早生まれではないが四月以降 = (4 < 誕生月) * (4 <= 対象期間.start.month)
         学年を繰り上げるべき = 対象期間において早生まれ + 早生まれではないが四月以降
 
-        print(学年を繰り上げるべき)
-
         return (対象期間.start.year - 誕生年) + where(学年を繰り上げるべき, 1, 0)
+
 
 class 行方不明(Variable):
     value_type = bool
@@ -79,11 +80,13 @@ class 行方不明(Variable):
     definition_period = DAY
     label = "行方不明"
 
+
 class 生存状況パターン(Enum):
     __order__ = "生存　死亡　不明"
     生存 = "生存"
     死亡 = "死亡"
     不明 = "不明"
+
 
 class 生存状況(Variable):
     value_type = Enum 

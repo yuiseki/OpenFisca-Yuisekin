@@ -146,6 +146,7 @@ class 世帯所得(Variable):
         各収入 = 対象世帯.members("所得", 対象期間)
         return 対象世帯.sum(各収入)
 
+
 class 世帯高所得(Variable):
     value_type = float
     entity = 世帯
