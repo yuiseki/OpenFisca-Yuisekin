@@ -79,7 +79,7 @@ class 行方不明(Variable):
     definition_period = DAY
     label = "行方不明"
 
-class 生存状態(Enum):
+class 生存状況パターン(Enum):
     __order__ = "生存　死亡　不明"
     生存 = "生存"
     死亡 = "死亡"
@@ -87,8 +87,8 @@ class 生存状態(Enum):
 
 class 生存状況(Variable):
     value_type = Enum 
-    possible_values = 生存状態
-    default_value = 生存状態.生存
+    possible_values = 生存状況パターン
+    default_value = 生存状況パターン.生存
     entity = 人物
     definition_period = DAY
     label = "生存状況"
@@ -98,6 +98,6 @@ class 生存状況(Variable):
         死亡年月日 = 対象人物("死亡年月日", 対象期間)
         死亡 = (死亡年月日 != None) * (死亡年月日 > 誕生年月日) * (誕生年月日 < 対象期間.start)
 
-        生存状況 = where(死亡, 生存状態.死亡, 生存状態.生存)
+        生存状況 = where(死亡, 生存状況パターン.死亡, 生存状況パターン.生存)
 
-        return where(行方不明, 生存状態.不明, 生存状況 )
+        return where(行方不明, 生存状況パターン.不明, 生存状況 )
