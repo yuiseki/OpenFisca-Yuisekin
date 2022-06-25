@@ -24,7 +24,7 @@ class ベーシックインカム(Variable):
     def formula_2016_12(対象人物, 対象期間, parameters):
         年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
         # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
-        return 年齢条件 * parameters(対象期間).福祉.ベーシックインカム
+        return parameters(対象期間).福祉.ベーシックインカム
 
     def formula_2015_12(対象人物, 対象期間, parameters):
         年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
