@@ -31,7 +31,7 @@ docker compose build
 ### テストを実行する
 
 ```
-docker compose run --rm openfisca bash -c "make build && make test"
+docker compose run --rm openfisca /bin/bash -c "make build && make test" 
 ```
 
 ## API サーバーとして動かす
