@@ -20,6 +20,7 @@ git clone git@github.com:<あなたのGitHub ユーザーネーム>/OpenFisca-Yu
 ```
 
 ### 環境変数を利用してPythonにUTF-8を強制させる
+Unicode Decoding Errorが起きるときもこちらの通りにしてください。
 Powershellを起動し以下のコマンドを入力して下さい。
 
 ```
