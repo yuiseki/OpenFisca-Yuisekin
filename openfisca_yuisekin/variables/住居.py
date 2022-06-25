@@ -33,7 +33,7 @@ class 家賃(Variable):
 
 # Possible values for the 居住状況 variable, defined further down
 # See more at <https://openfisca.org/doc/coding-the-legislation/20_input_variables.html#advanced-example-enumerations-enum>
-class HousingOccupancyStatus(Enum):
+class 居住状況パターン(Enum):
     __order__ = "持ち家 借家 free_lodger homeless"
     持ち家 = "持ち家"
     借家 = "借家"
@@ -43,8 +43,8 @@ class HousingOccupancyStatus(Enum):
 
 class 居住状況(Variable):
     value_type = Enum
-    possible_values = HousingOccupancyStatus
-    default_value = HousingOccupancyStatus.借家
+    possible_values = 居住状況パターン
+    default_value = 居住状況パターン.借家
     entity = 世帯
     definition_period = MONTH
     label = "Legal housing situation of the 世帯 concerning their main residence"
