@@ -27,6 +27,21 @@ class 所得税(Variable):
         return 対象人物("所得", 対象期間) * parameters(対象期間).税金.所得税率
 
 
+class 住民税(Variable):
+    value_type = float
+    entity = 人物
+    definition_period = MONTH
+    label = "渋谷区の住民税"
+    reference = "https://www.city.shibuya.tokyo.jp/kurashi/zeikin/juminzei/juminzei_fuka.html"
+
+    def formula(対象人物, 対象期間, parameters):
+        都民税 = (対象人物("所得", 対象期間) * parameters(対象期間).税金.住民税.都民税.所得割額税率) \
+            + parameters(対象期間).税金.住民税.都民税.均等割額
+        特別区民税 = (対象人物("所得", 対象期間) * parameters(対象期間).税金.住民税.特別区民税.所得割額税率) \
+            + parameters(対象期間).税金.住民税.特別区民税.均等割額
+        return 都民税 + 特別区民税
+
+
 class 社会保険料(Variable):
     value_type = float
     entity = 人物
