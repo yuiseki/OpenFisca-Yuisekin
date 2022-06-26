@@ -6,14 +6,12 @@ A variable is a property of an Entity such as a 人物, a 世帯…
 See https://openfisca.org/doc/key-concepts/variables.html
 """
 
+import numpy as np
 # Import from openfisca-core the Python objects used to code the legislation in OpenFisca
 from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
-
 # Import the Entities specifically defined for this tax and benefit system
 from openfisca_yuisekin.entities import 世帯, 人物
-
-import numpy as np
 
 
 class ベーシックインカム(Variable):
@@ -71,7 +69,7 @@ class 児童手当(Variable):
     reference = "https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/jido_t.html"
     documentation = """
     渋谷区の児童手当制度
-    
+
     - 〒150-8010 東京都渋谷区宇田川町1-1
     - 渋谷区子ども青少年課子育て給付係
     - 03-3463-2558
@@ -93,10 +91,10 @@ class 児童手当(Variable):
         手当条件 = 所得条件
         手当金額 = \
             np.sum(
-                + (児童手当.金額.三歳未満 * 三歳未満の児童の人数) \
-                + (児童手当.金額.三歳から小学校修了前 * 三歳から小学校修了前の児童の人数) \
-                + (児童手当.金額.中学生 * 中学生の児童の人数)
-            )
+                + (児童手当.金額.三歳未満 * 三歳未満の児童の人数)
+                + (児童手当.金額.三歳から小学校修了前 * 三歳から小学校修了前の児童の人数)
+                + (児童手当.金額.中学生 * 中学生の児童の人数),
+                )
         return 手当条件 * 手当金額
 
 
