@@ -526,7 +526,7 @@ See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisc
 - Impacted periods: all.
 - Impacted areas: `stats`.
 - Details:
-  - Introduce `福祉給付`.
+  - Introduce `福祉給付総額`.
   - Introduce `税金総額`.
 
 <!-- -->

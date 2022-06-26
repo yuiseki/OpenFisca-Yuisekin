@@ -74,15 +74,15 @@ class 学年(Variable):
         return (対象期間.start.year - 誕生年) + where(学年を繰り上げるべき, 1, 0)
 
 
-class 行方不明(Variable):
+class 行方不明年月日(Variable):
     value_type = bool
     entity = 人物
     definition_period = DAY
-    label = "行方不明"
+    label = "行方不明になった年月日"
 
 
 class 生存状況パターン(Enum):
-    __order__ = "生存　死亡　不明"
+    __order__ = "生存 死亡 不明"
     生存 = "生存"
     死亡 = "死亡"
     不明 = "不明"
@@ -94,4 +94,4 @@ class 生存状況(Variable):
     default_value = 生存状況パターン.生存
     entity = 人物
     definition_period = DAY
-    label = "生存状況"
+    label = "人物の生存状況"

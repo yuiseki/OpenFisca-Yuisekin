@@ -20,18 +20,17 @@ class 課税床面積(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "Size of the accommodation, in square metres"
+    label = "世帯の住居の課税床面積"
 
 
-# This variable is a pure input: it doesn't have a formula
 class 家賃(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "Rent paid by the 世帯"
+    label = "世帯の家賃"
 
 
-# Possible values for the 居住状況 variable, defined further down
+# 居住状況パターンをEnumとして実装
 # See more at <https://openfisca.org/doc/coding-the-legislation/20_input_variables.html#advanced-example-enumerations-enum>
 class 居住状況パターン(Enum):
     __order__ = "持ち家 借家 free_lodger homeless"
@@ -47,7 +46,7 @@ class 居住状況(Variable):
     default_value = 居住状況パターン.借家
     entity = 世帯
     definition_period = MONTH
-    label = "Legal housing situation of the 世帯 concerning their main residence"
+    label = "世帯の居住状況"
 
 
 class postal_code(Variable):
@@ -55,4 +54,4 @@ class postal_code(Variable):
     max_length = 5
     entity = 世帯
     definition_period = MONTH
-    label = "Postal code of the 世帯"
+    label = "世帯の郵便番号"
