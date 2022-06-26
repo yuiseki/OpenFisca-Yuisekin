@@ -1,5 +1,4 @@
-# The 社会保険料 is calculated with a marginal scale. Marginal scales are represented with a specific structure.
-description: Social security contribution tax scale
+description: 社会保険料率
 metadata:
   threshold_unit: currency-EUR
   rate_unit: /1
