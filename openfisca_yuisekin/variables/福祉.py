@@ -20,18 +20,17 @@ class ベーシックインカム(Variable):
     value_type = float
     entity = 人物
     definition_period = MONTH
-    label = "ベーシックインカム"
+    label = "人物のベーシックインカム"
     reference = "https://gov.ユイセキン共和国/ベーシックインカム"
 
     def formula_2016_12(対象人物, 対象期間, parameters):
-        年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
-        # This '*' is a vectorial 'if'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
+        # This '*' is a vectorial 'if'.
+        # See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#control-structures
         return parameters(対象期間).福祉.ベーシックインカム
 
     def formula_2015_12(対象人物, 対象期間, parameters):
         年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.成人年齢
         所得条件 = 対象人物("所得", 対象期間) == 0
-        # The '*' is also used as a vectorial 'and'. See https://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#boolean-operations
         return 年齢条件 * 所得条件 * parameters(対象期間).福祉.ベーシックインカム
 
 
@@ -39,35 +38,25 @@ class 住宅手当(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "住宅手当"
-    reference = "https://law.gov.example/住宅手当"  # Always use the most official source
-    end = "2016-11-30"  # This allowance was removed on the 1st of Dec 2016. Calculating it before this date will always return the variable default value, 0.
+    label = "世帯の住宅手当"
+    # 2016年12月以降は廃止されたのでendは2016年11月30日
+    # これ以降はずっと0を返す
+    end = "2016-11-30"
     unit = "currency-EUR"
     documentation = """
-    This allowance was introduced on the 1st of Jan 1980.
-    It disappeared in Dec 2016.
+    住宅手当制度の例。
+    1980年に開始され、2016年12月に廃止された想定。
     """
 
     def formula_1980(対象世帯, 対象期間, parameters):
-        """
-        Housing allowance.
-
-        This allowance was introduced on the 1st of Jan 1980.
-        Calculating it before this date will always return the variable default value, 0.
-
-        To compute this allowance, the 'rent' value must be provided for the same month,
-        but '居住状況' is not necessary.
-        """
         return 対象世帯("家賃", 対象期間) * parameters(対象期間).福祉.住宅手当
 
 
-# By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
 class 年金(Variable):
     value_type = float
     entity = 人物
     definition_period = MONTH
-    label = "年金 for the elderly. 年金 attribuée aux 人物nes âgées. تقاعد."
-    reference = ["https://fr.wikipedia.org/wiki/Retraite_(économie)", "https://ar.wikipedia.org/wiki/تقاعد"]
+    label = "人物の受け取る年金"
 
     def formula(対象人物, 対象期間, parameters):
         年齢条件 = 対象人物("年齢", 対象期間) >= parameters(対象期間).全般.定年年齢
@@ -115,7 +104,7 @@ class 児童扶養手当(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "低所得世帯への児童扶養手当"
+    label = "世帯への児童扶養手当"
     documentation = "実際のオーストラリアの制度を参考にしている"
     reference = "https://www.servicesaustralia.gov.au/individuals/services/centrelink/parenting-payment/who-can-get-it"
 
@@ -141,10 +130,9 @@ class 世帯所得(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "The sum of the salaries of those living in a 世帯"
+    label = "世帯全員の収入の合計"
 
     def formula(対象世帯, 対象期間, _parameters):
-        """世帯全員の収入"""
         各収入 = 対象世帯.members("所得", 対象期間)
         return 対象世帯.sum(各収入)
 
@@ -153,9 +141,8 @@ class 世帯高所得(Variable):
     value_type = float
     entity = 世帯
     definition_period = MONTH
-    label = "The sum of the salaries of those living in a 世帯"
+    label = "世帯で最も所得が高い人物の所得"
 
     def formula(対象世帯, 対象期間, _parameters):
-        """世帯全員の収入"""
         各収入 = 対象世帯.members("所得", 対象期間)
         return 対象世帯.max(各収入)
