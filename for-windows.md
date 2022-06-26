@@ -1,4 +1,4 @@
-# OpenFisca Windows向けの情報まとめ
+# OpenFisca Windows 向けの情報まとめ
 
 ## 環境構築のすすめ
 
@@ -9,27 +9,29 @@
   - GitHub にユーザー登録する
   - Docker をセットアップする
 
-### リポジトリをForkする
+### リポジトリを Fork する
 
-GitHubのこのリポジトリをforkする
+GitHub のこのリポジトリを fork する
 
-### forkしたリポジトリをCloneする
+### fork したリポジトリを Clone する
 
 ```
 git clone git@github.com:<あなたのGitHub ユーザーネーム>/OpenFisca-Yuisekin.git
 ```
 
-### 環境変数を利用してPythonにUTF-8を強制させる
-Unicode Decoding Errorが起きるときもこちらの通りにしてください。
-Powershellを起動し以下のコマンドを入力して下さい。
+### 環境変数を利用して Python に UTF-8 を強制させる
+
+Unicode Decoding Error が起きるときもこちらの通りにしてください。
+Powershell を起動し以下のコマンドを入力して下さい。
 
 ```
-$env:PYTHONUTF8=1  
+$env:PYTHONUTF8=1
 ```
 
 ## テストの実行
 
-openfiscaのディレクトリに移動し、以下のコマンドを実行
+openfisca のディレクトリに移動し、以下のコマンドを実行
+
 ```
 docker compose run --rm openfisca /bin/bash -c "make build && make test"
 ```

@@ -42,5 +42,5 @@ lint: clean check-syntax-errors check-style
 test:
 	openfisca test --country-package openfisca_yuisekin openfisca_yuisekin/tests
 
-serve-local: build
+serve-local:
 	openfisca serve --country-package openfisca_yuisekin

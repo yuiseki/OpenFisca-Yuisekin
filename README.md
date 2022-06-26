@@ -40,4 +40,7 @@ docker compose run --rm openfisca /bin/bash -c "make build && make test"
 docker compose up
 ```
 
-http://localhost:5000/
+- GET http://localhost:5000/spec
+- GET http://localhost:5000/entities
+- GET http://localhost:5000/variables
+- GET http://localhost:5000/parameters
