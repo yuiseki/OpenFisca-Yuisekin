@@ -11,7 +11,6 @@ See https://openfisca.org/doc/key-concepts/variables.html
 from numpy import maximum as max_
 from openfisca_core.periods import MONTH, YEAR
 from openfisca_core.variables import Variable
-
 # Import the Entities specifically defined for this tax and benefit system
 from openfisca_yuisekin.entities import 世帯, 人物
 

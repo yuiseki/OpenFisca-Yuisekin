@@ -6,17 +6,16 @@ A variable is a property of an Entity such as a 人物, a 世帯…
 See https://openfisca.org/doc/key-concepts/variables.html
 """
 
-from cProfile import label
+# from cProfile import label
+# from xmlrpc.client import Boolean
 from datetime import date
-from xmlrpc.client import Boolean
 
 # Import from numpy the operations you need to apply on OpenFisca's population vectors
 # Import from openfisca-core the Python objects used to code the legislation in OpenFisca
 from numpy import where
-from openfisca_core.periods import ETERNITY, MONTH, DAY
-from openfisca_core.variables import Variable
 from openfisca_core.indexed_enums import Enum
-
+from openfisca_core.periods import DAY, ETERNITY, MONTH
+from openfisca_core.variables import Variable
 # Import the Entities specifically defined for this tax and benefit system
 from openfisca_yuisekin.entities import 人物
 
@@ -67,7 +66,7 @@ class 学年(Variable):
         誕生月 = 誕生年月日.astype("datetime64[M]").astype(int) % 12 + 1
         # 誕生日 = (誕生年月日 - 誕生年月日.astype("datetime64[M]") + 1).astype(int)
 
-        対象期間において早生まれ = (誕生月 < 4) *  (4 <= 対象期間.start.month)
+        対象期間において早生まれ = (誕生月 < 4) * (4 <= 対象期間.start.month)
         早生まれではないが四月以降 = (4 < 誕生月) * (4 <= 対象期間.start.month)
         学年を繰り上げるべき = 対象期間において早生まれ + 早生まれではないが四月以降
 
@@ -89,7 +88,7 @@ class 生存状況パターン(Enum):
 
 
 class 生存状況(Variable):
-    value_type = Enum 
+    value_type = Enum
     possible_values = 生存状況パターン
     default_value = 生存状況パターン.生存
     entity = 人物
