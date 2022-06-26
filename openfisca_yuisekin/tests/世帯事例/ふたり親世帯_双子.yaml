@@ -1,5 +1,5 @@
-- name: 渋谷区の共働き双子世帯の児童手当
-  description: 渋谷区の共働き双子世帯の児童手当
+- name: 渋谷区の共働き双子世帯
+  description: 渋谷区の共働き双子世帯
   period: 2022-06
   absolute_error_margin: 0
   input:

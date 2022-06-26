@@ -1,8 +1,8 @@
 # You can also use test files to describe complex situations with different entities
 # We can run this test on our command line using `openfisca-run-test tests/situations/所得税.yaml`
 
-- name: Parenting allowance for a two parent 世帯 with little 所得
-  description: Parenting allowance relies on the 所得s on the 保護者一覧 and 年齢s of the children
+- name: 子どもが三人いる世帯
+  description: 子どもが三人いる世帯
   period: 2020-01
   absolute_error_margin: 0
   input:
