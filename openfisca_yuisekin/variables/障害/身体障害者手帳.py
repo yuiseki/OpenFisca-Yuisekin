@@ -1,5 +1,5 @@
 """
-身体障害者手帳の定義
+身体障害者手帳の実装
 """
 
 from datetime import date
@@ -45,9 +45,17 @@ class 身体障害者手帳等級(Variable):
     label = "人物の身体障害者手帳等級"
 
     def formula(対象人物, 対象期間, _parameters):
+        """
+        人物の有効な身体障害者手帳の等級
+        身体障害者手帳の有効期限は二年間
+        """
         最新交付年月日 = 対象人物("身体障害者手帳最新交付年月日", 対象期間)
+        # NumPyのdatetime64とPythonのdatetimeがごちゃまぜになっている
+        # Pythonのdatetimeに揃える
         交付年月日 = 最新交付年月日.astype("datetime64[D]").astype(datetime)[0]
+        # python-dateutilのrelativedeltaを使って日時の足し算をする
         有効年月日 = 交付年月日 + relativedelta(years=2)
+        # Pythonのdatetime同士なら比較演算子が普通に使える
         身体障害者手帳が有効 = (交付年月日 <= 対象期間.date) * (対象期間.date <= 有効年月日)
         身体障害者手帳最新等級認定 = 対象人物("身体障害者手帳最新等級認定", 対象期間)[0]
         return (身体障害者手帳最新等級認定 * 身体障害者手帳が有効)
