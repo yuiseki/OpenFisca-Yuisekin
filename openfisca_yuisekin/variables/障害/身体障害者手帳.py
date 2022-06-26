@@ -33,7 +33,7 @@ class 身体障害者手帳最新等級認定(Variable):
     default_value = 身体障害者手帳等級認定パターン.無
     entity = 人物
     definition_period = ETERNITY
-    label = "人物の身体障害者手帳等級認定"
+    label = "人物の身体障害者手帳の最新等級認定"
 
 
 class 身体障害者手帳等級(Variable):
