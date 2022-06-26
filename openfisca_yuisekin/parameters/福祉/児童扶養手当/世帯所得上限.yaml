@@ -1,10 +1,7 @@
-description: Parenting allowance 世帯所得上限
+description: 児童扶養手当の世帯所得上限
 metadata:
-  reference: https://law.gov.example/児童扶養手当/世帯所得上限
   unit: currency-EUR
 values:
-  # This parameter is only defined since the 1st of Dec 2015.
   2015-12-01:
     value: 500.0
-    metadata:
-      reference: https://law.gov.example/parenting-allowance/所得-threshold/2015-12
+

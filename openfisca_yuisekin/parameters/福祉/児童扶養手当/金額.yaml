@@ -1,10 +1,6 @@
-description: Parenting allowance 金額
+description: 児童扶養手当の金額
 metadata:
-  reference: https://law.gov.example/児童扶養手当/金額
   unit: currency-EUR
 values:
-  # This parameter is only defined since the 1st of Dec 2015.
   2015-12-01:
     value: 600.0
-    metadata:
-      reference: https://law.gov.example/parenting-allowance/金額/2015-12
