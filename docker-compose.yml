@@ -3,6 +3,7 @@ services:
   openfisca:
     build: .
     command: bash -c "make build && make serve-local"
+    user: user:user
     ports:
       - 5000:5000
     volumes:

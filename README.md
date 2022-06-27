@@ -31,13 +31,13 @@ docker compose build
 ### テストを実行する
 
 ```
-docker compose run --rm openfisca /bin/bash -c "make build && make test" 
+docker compose run --rm openfisca /bin/bash -c "make build && make test"
 ```
 
 ## API サーバーとして動かす
 
 ```
-docker compose up
+docker compose run --rm openfisca /bin/bash -c "make build && make serve-local"
 ```
 
 - GET http://localhost:5000/spec
