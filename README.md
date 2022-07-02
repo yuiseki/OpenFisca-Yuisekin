@@ -2,6 +2,17 @@
 
 ## 開発参加方法
 
+### 概要
+
+（このリポジトリ を自分の GitHub アカウントに Fork する | 既に Fork してる場合は Fetch upstream する（必須））
+→ Fork した自分のアカウントの側のリポジトリをブラウザで開き、緑色の「Code」ボタンをクリック
+→ 「Create codespace on main」をクリック
+→ 「Open this codespace in VS Code Desktop」をクリック
+→ ダイアログが数回表示されるので全部 OK っぽい方をクリック
+→ 動作確認のために make を実行
+
+これだけで全員同じ環境で開発できるようになるはず。料金は 2022-07-02 現在、無料です。
+
 ### 前提
 
 - https://scrapbox.io/c4j/GitHubでの共同開発への参加の準備
@@ -9,9 +20,9 @@
   - GitHub Desktop または Git コマンド をセットアップする
   - Visual Studio Code をセットアップする
 
-## このリポジトリを GitHub であなたのアカウントへ Fork して、 `git clone` する
+### このリポジトリを GitHub であなたのアカウントへ Fork して、 `git clone` する
 
-## Fork したあなたのリポジトリで、GitHub Codespaces を起動して、Visual Studio Code で開く
+### Fork したあなたのリポジトリで、GitHub Codespaces を起動して、Visual Studio Code で開く
 
 [![Image from Gyazo](https://i.gyazo.com/a29c4cce16baca1b33978231849b2269.png)](https://gyazo.com/a29c4cce16baca1b33978231849b2269)
 [![Image from Gyazo](https://i.gyazo.com/1351c39a5ac9a4f5a4a4ae9901ec12d6.png)](https://gyazo.com/1351c39a5ac9a4f5a4a4ae9901ec12d6)
@@ -22,7 +33,7 @@
 make
 ```
 
-## GitHub Codespaces で API サーバーとして動かす
+### GitHub Codespaces で API サーバーとして動かす
 
 ```
 make serve-local
