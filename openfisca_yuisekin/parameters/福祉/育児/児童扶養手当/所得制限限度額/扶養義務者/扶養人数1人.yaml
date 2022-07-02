@@ -1,0 +1,9 @@
+description: 児童扶養手当の所得制限限度額（要入力）
+metadata:
+  reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/teate_gendogaku.html#fuyo
+  unit: currency-JPY
+values:
+  2010-05-01:
+    value: 0
+    metadata:
+      reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/teate_gendogaku.html#fuyo
