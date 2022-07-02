@@ -7,7 +7,7 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 from openfisca_core.indexed_enums import Enum
-from openfisca_core.periods import DAY, ETERNITY
+from openfisca_core.periods import ETERNITY, MONTH
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 人物
 
@@ -41,7 +41,7 @@ class 身体障害者手帳等級(Variable):
     possible_values = 身体障害者手帳等級認定パターン
     default_value = 身体障害者手帳等級認定パターン.無
     entity = 人物
-    definition_period = DAY
+    definition_period = MONTH
     label = "人物の身体障害者手帳等級"
 
     def formula(対象人物, 対象期間, _parameters):
@@ -61,5 +61,5 @@ class 身体障害者手帳等級(Variable):
         有効年月日 = 交付年月日 + relativedelta(years=2)
         # Pythonのdatetime同士なら比較演算子が普通に使える
         身体障害者手帳が有効 = (交付年月日 <= 対象期間.date) * (対象期間.date <= 有効年月日)
-        身体障害者手帳最新等級認定 = 対象人物("身体障害者手帳最新等級認定", 対象期間)[0]
-        return (身体障害者手帳最新等級認定 * 身体障害者手帳が有効)
+        身体障害者手帳最新等級認定 = 対象人物("身体障害者手帳最新等級認定", 対象期間)
+        return (身体障害者手帳が有効 * 身体障害者手帳最新等級認定)
