@@ -6,6 +6,7 @@ from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 世帯
 
+
 class 児童扶養手当(Variable):
     value_type = float
     entity = 世帯
