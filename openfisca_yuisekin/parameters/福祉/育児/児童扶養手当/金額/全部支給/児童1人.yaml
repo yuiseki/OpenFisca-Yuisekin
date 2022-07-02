@@ -1,0 +1,9 @@
+description: 児童扶養手当の金額
+metadata:
+  reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/hitorioya/hitorioya_teate.html
+  unit: currency-JPY
+values:
+  2022-05-01:
+    value: 43070
+    metadata:
+      reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/hitorioya/hitorioya_teate.html
