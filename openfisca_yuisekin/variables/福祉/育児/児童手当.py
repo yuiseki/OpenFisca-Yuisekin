@@ -23,7 +23,7 @@ class 児童手当(Variable):
     """
 
     def formula(対象世帯, 対象期間, parameters):
-        児童手当 = parameters(対象期間).福祉.児童手当
+        児童手当 = parameters(対象期間).福祉.育児.児童手当
 
         世帯高所得 = 対象世帯("世帯高所得", 対象期間)
         # TODO 扶養人数が1人ではない場合に対応する

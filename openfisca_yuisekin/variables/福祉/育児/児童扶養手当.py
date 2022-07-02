@@ -16,7 +16,7 @@ class 児童扶養手当(Variable):
     reference = "https://www.servicesaustralia.gov.au/individuals/services/centrelink/parenting-payment/who-can-get-it"
 
     def formula(対象世帯, 対象期間, parameters):
-        児童扶養手当 = parameters(対象期間).福祉.児童扶養手当
+        児童扶養手当 = parameters(対象期間).福祉.育児.児童扶養手当
 
         世帯所得 = 対象世帯("世帯所得", 対象期間)
         世帯所得上限 = 児童扶養手当.世帯所得上限
