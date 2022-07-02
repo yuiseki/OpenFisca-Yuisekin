@@ -1,4 +1,4 @@
-all: build test
+all: clean build test
 
 uninstall:
 	pip freeze | grep -v "^-e" | xargs pip uninstall -y
