@@ -2,6 +2,11 @@
 
 ## 開発参加方法
 
+### 前提
+
+- GitHub にユーザー登録する
+- Visual Studio Code をセットアップする
+
 ### 概要
 
 - （このリポジトリ を自分の GitHub アカウントに Fork する | 既に Fork してる場合は Fetch upstream する（必須））
@@ -9,16 +14,10 @@
 - → 「Create codespace on main」をクリック
 - → 「Open this codespace in VS Code Desktop」をクリック
 - → ダイアログが数回表示されるので全部 OK っぽい方をクリック
-- → 動作確認のために `make` を実行
+- → VSCode と GitHub を連携させるために認証が求められるので承認する
+- → VSCode で GitHub Codespaces に無事に接続できたら、動作確認のために、ターミナルで `make` を実行
 
 これだけで全員同じ環境で開発できるようになるはず。料金は 2022-07-02 現在、無料です。
-
-### 前提
-
-- https://scrapbox.io/c4j/GitHubでの共同開発への参加の準備
-  - GitHub にユーザー登録する
-  - GitHub Desktop または Git コマンド をセットアップする
-  - Visual Studio Code をセットアップする
 
 ### このリポジトリを GitHub であなたのアカウントへ Fork して、 `git clone` する
 
