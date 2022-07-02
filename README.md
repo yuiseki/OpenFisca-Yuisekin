@@ -4,12 +4,12 @@
 
 ### 概要
 
-（このリポジトリ を自分の GitHub アカウントに Fork する | 既に Fork してる場合は Fetch upstream する（必須））
-→ Fork した自分のアカウントの側のリポジトリをブラウザで開き、緑色の「Code」ボタンをクリック
-→ 「Create codespace on main」をクリック
-→ 「Open this codespace in VS Code Desktop」をクリック
-→ ダイアログが数回表示されるので全部 OK っぽい方をクリック
-→ 動作確認のために make を実行
+- （このリポジトリ を自分の GitHub アカウントに Fork する | 既に Fork してる場合は Fetch upstream する（必須））
+- → Fork した自分のアカウントの側のリポジトリをブラウザで開き、緑色の「Code」ボタンをクリック
+- → 「Create codespace on main」をクリック
+- → 「Open this codespace in VS Code Desktop」をクリック
+- → ダイアログが数回表示されるので全部 OK っぽい方をクリック
+- → 動作確認のために `make` を実行
 
 これだけで全員同じ環境で開発できるようになるはず。料金は 2022-07-02 現在、無料です。
 
