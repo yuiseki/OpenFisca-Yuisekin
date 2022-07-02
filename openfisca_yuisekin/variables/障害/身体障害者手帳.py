@@ -56,7 +56,7 @@ class 身体障害者手帳等級(Variable):
         #   最新交付年月日はNumPyのdatetime64
         #   対象期間はOpenFiscaのPeriodというクラス
         #     対象期間.dateはPythonのdatetimeになる
-        交付年月日 = 最新交付年月日.astype("datetime64[D]").astype(datetime)[0]
+        交付年月日 = 最新交付年月日.astype("datetime64[D]").astype(datetime)
         # python-dateutilのrelativedeltaを使って日時の足し算をする
         有効年月日 = 交付年月日 + relativedelta(years=2)
         # Pythonのdatetime同士なら比較演算子が普通に使える
