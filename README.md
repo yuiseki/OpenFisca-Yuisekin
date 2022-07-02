@@ -7,37 +7,25 @@
 - https://scrapbox.io/c4j/GitHubでの共同開発への参加の準備
   - GitHub にユーザー登録する
   - GitHub Desktop または Git コマンド をセットアップする
-  - Docker をセットアップする
+  - Visual Studio Code をセットアップする
 
-### リポジトリを GitHub で自分のアカウントへ Fork して、 `git clone` する
+## このリポジトリを GitHub であなたのアカウントへ Fork して、 `git clone` する
 
-#### GitHub Desktop をセットアップしている場合
+## Fork したあなたのリポジトリで、GitHub Codespaces を起動して、Visual Studio Code で開く
 
-- GitHub Desktop で「OpenFisca-Yuisekin」を Clone する
+[![Image from Gyazo](https://i.gyazo.com/a29c4cce16baca1b33978231849b2269.png)](https://gyazo.com/a29c4cce16baca1b33978231849b2269)
+[![Image from Gyazo](https://i.gyazo.com/1351c39a5ac9a4f5a4a4ae9901ec12d6.png)](https://gyazo.com/1351c39a5ac9a4f5a4a4ae9901ec12d6)
 
-#### Git コマンドをセットアップしている場合
-
-```
-git clone git@github.com:<あなたのGitHub ユーザーネーム>/OpenFisca-Yuisekin.git
-cd OpenFisca-Yuisekin
-```
-
-### Docker イメージをビルドする
+### GitHub Codespaces で動作確認する
 
 ```
-docker compose build
+make
 ```
 
-### テストを実行する
+## GitHub Codespaces で API サーバーとして動かす
 
 ```
-docker compose run --rm openfisca make
-```
-
-## API サーバーとして動かす
-
-```
-docker compose run --rm openfisca /bin/bash -c "make build && make serve-local"
+make serve-local
 ```
 
 - GET http://localhost:5000/spec
