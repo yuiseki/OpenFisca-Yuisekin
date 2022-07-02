@@ -11,7 +11,7 @@
 
 ### リポジトリを Fork する
 
-GitHub のこのリポジトリを fork する
+GitHub のこのリポジトリを自分のアカウントへ fork する
 
 ### fork したリポジトリを Clone する
 
@@ -33,5 +33,5 @@ $env:PYTHONUTF8=1
 openfisca のディレクトリに移動し、以下のコマンドを実行
 
 ```
-docker compose run --rm openfisca /bin/bash -c "make build && make test"
+docker compose run --rm openfisca maek
 ```
