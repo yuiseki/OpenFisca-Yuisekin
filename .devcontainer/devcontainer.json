@@ -32,7 +32,8 @@
 				"oderwat.indent-rainbow",
 				"VisualStudioExptTeam.vscodeintellicode",
 				"mosapride.zenkaku",
-				"ms-python.python"
+				"ms-python.python",
+				"ms-vsliveshare.vsliveshare"
 			]
 		}
 	}
