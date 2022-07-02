@@ -10,6 +10,9 @@ RUN pip install --upgrade setuptools
 WORKDIR /app
 COPY . /app
 
+RUN make install
+RUN make build
+
 RUN useradd -m user
 USER user
 
