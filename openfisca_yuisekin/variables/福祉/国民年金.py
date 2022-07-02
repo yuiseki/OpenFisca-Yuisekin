@@ -2,15 +2,11 @@
 国民年金の実装
 """
 
-from datetime import date
-from datetime import datetime
-
-from dateutil.relativedelta import relativedelta
+from numpy import asarray
 from openfisca_core.indexed_enums import Enum
 from openfisca_core.periods import ETERNITY
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 人物
-from numpy import asarray, select
 
 
 class 国民年金被保険者パターン(Enum):
