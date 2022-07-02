@@ -7,7 +7,7 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 from openfisca_core.indexed_enums import Enum
-from openfisca_core.periods import DAY, ETERNITY
+from openfisca_core.periods import MONTH, ETERNITY
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 人物
 
@@ -41,7 +41,7 @@ class 身体障害者手帳等級(Variable):
     possible_values = 身体障害者手帳等級認定パターン
     default_value = 身体障害者手帳等級認定パターン.無
     entity = 人物
-    definition_period = DAY
+    definition_period = MONTH
     label = "人物の身体障害者手帳等級"
 
     def formula(対象人物, 対象期間, _parameters):
