@@ -1,41 +1,41 @@
-description: 渋谷区の児童手当の所得上限限度額
+description: 渋谷区の児童扶養手当の一部支給の所得制限限度額
 metadata:
   threshold_unit: person
   rate_unit: 1
 brackets:
 - rate:
     2000-05-01:
-      value: 8580000
+      value: 1920000
   threshold:
     2000-05-01:
       value: 0
 - rate:
     2000-05-01:
-      value: 8960000
+      value: 2300000
   threshold:
     2000-05-01:
       value: 1
 - rate:
     2000-05-01:
-      value: 9340000
+      value: 2680000
   threshold:
     2000-05-01:
       value: 2
 - rate:
     2000-05-01:
-      value: 9720000
+      value: 3060000
   threshold:
     2000-05-01:
       value: 3
 - rate:
     2000-05-01:
-      value: 10100000
+      value: 3440000
   threshold:
     2000-05-01:
       value: 4
 - rate:
     2000-05-01:
-      value: 10480000
+      value: 3820000
   threshold:
     2000-05-01:
       value: 5
