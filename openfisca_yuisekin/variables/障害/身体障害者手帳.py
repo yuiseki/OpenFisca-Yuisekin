@@ -7,7 +7,7 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 from openfisca_core.indexed_enums import Enum
-from openfisca_core.periods import MONTH, ETERNITY
+from openfisca_core.periods import ETERNITY, MONTH
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 人物
 
