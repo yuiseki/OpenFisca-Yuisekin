@@ -5,6 +5,7 @@
 from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 世帯
+from openfisca_yuisekin.variables.障害.身体障害者手帳 import 身体障害者手帳等級認定パターン
 
 
 class 特別児童扶養手当(Variable):
@@ -32,11 +33,14 @@ class 特別児童扶養手当(Variable):
         上限年齢 = 特別児童扶養手当.上限年齢
 
         身体障害者手帳等級一覧 = 対象世帯.members("身体障害者手帳等級", 対象期間)
+        print(身体障害者手帳等級一覧)
+        身体障害者がいる = 対象世帯.any(身体障害者手帳等級一覧 != 身体障害者手帳等級認定パターン.無)
+        print(身体障害者がいる)
         児童一覧の年齢 = 対象世帯.members("年齢", 対象期間)
         上限年齢以下の児童がいる = 対象世帯.any(児童一覧の年齢 < 上限年齢)
 
-        手当条件 = 所得条件 * 上限年齢以下の児童がいる
-        # TODO 児童の人数に応じて手当金額を変える
+        手当条件 = 所得条件 * 上限年齢以下の児童がいる * 身体障害者がいる
+        # TODO 身体障害者の児童の人数と等級に応じて手当金額を変える
         手当金額 = 特別児童扶養手当.金額.一級
 
         return 手当条件 * 手当金額
