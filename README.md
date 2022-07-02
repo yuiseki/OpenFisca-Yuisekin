@@ -18,7 +18,7 @@
 #### Git コマンドをセットアップしている場合
 
 ```
-git clone git@github.com:あなたのGitHubユーザー名/OpenFisca-Yuisekin.git
+git clone git@github.com:<あなたのGitHub ユーザーネーム>/OpenFisca-Yuisekin.git
 cd OpenFisca-Yuisekin
 ```
 
@@ -31,7 +31,7 @@ docker compose build
 ### テストを実行する
 
 ```
-docker compose run --rm openfisca /bin/bash -c "make build && make test"
+docker compose run --rm openfisca make
 ```
 
 ## API サーバーとして動かす
