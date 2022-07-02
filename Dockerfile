@@ -1,5 +1,7 @@
 FROM python:3.7
 
+RUN apt install vim
+
 WORKDIR /app
 COPY . /app
 
@@ -11,4 +13,4 @@ USER user
 
 EXPOSE 5000
 
-CMD ["make", "serve-local"]
+CMD ["bash"]
