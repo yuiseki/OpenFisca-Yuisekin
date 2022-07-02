@@ -1,6 +1,11 @@
 FROM python:3.7
+USER root
 
-RUN apt install vim
+RUN apt-update
+RUN apt install -y vim
+
+RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
 
 WORKDIR /app
 COPY . /app
