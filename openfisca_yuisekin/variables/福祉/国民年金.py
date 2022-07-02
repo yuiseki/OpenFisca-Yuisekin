@@ -24,6 +24,7 @@ class 国民年金被保険者(Variable):
     entity = 人物
     definition_period = ETERNITY
     label = "人物の国民年金被保険者"
+    reference = "https://www.nenkin.go.jp/service/yougo/kagyo/kokuminkainenkin.html"
 
     def formula(対象人物, 対象期間, parameters):
         年齢 = 対象人物("年齢", 対象期間)
