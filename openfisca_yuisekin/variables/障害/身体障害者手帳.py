@@ -5,7 +5,6 @@
 from datetime import date
 from datetime import datetime
 
-from numpy import asarray
 from dateutil.relativedelta import relativedelta
 from openfisca_core.indexed_enums import Enum
 from openfisca_core.periods import ETERNITY, MONTH
