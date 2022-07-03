@@ -27,5 +27,6 @@ RUN useradd -m user
 USER user
 
 EXPOSE 5000
+EXPOSE 3000
 
 CMD ["bash"]
