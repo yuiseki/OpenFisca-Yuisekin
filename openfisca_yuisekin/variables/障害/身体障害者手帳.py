@@ -12,7 +12,7 @@ from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 人物
 
 
-class 身体障害者手帳最新交付年月日(Variable):
+class 身体障害者手帳交付年月日(Variable):
     value_type = date
     entity = 人物
     label = "人物の身体障害者手帳の最新交付年月日"
@@ -27,7 +27,7 @@ class 身体障害者手帳等級認定パターン(Enum):
     三級 = "三級"
 
 
-class 身体障害者手帳最新等級認定(Variable):
+class 身体障害者手帳等級認定(Variable):
     value_type = Enum
     possible_values = 身体障害者手帳等級認定パターン
     default_value = 身体障害者手帳等級認定パターン.無
@@ -50,7 +50,7 @@ class 身体障害者手帳等級(Variable):
 
         身体障害者手帳の有効期限は二年間
         """
-        最新交付年月日 = 対象人物("身体障害者手帳最新交付年月日", 対象期間)
+        最新交付年月日 = 対象人物("身体障害者手帳交付年月日", 対象期間)
         # OpenFiscaにおいては、NumPyのdatetime64とPythonのdatetimeがごちゃまぜになっている
         # だるいのでPythonのdatetimeに揃える
         #   最新交付年月日はNumPyのdatetime64
@@ -61,5 +61,5 @@ class 身体障害者手帳等級(Variable):
         有効年月日 = 交付年月日 + relativedelta(years=2)
         # Pythonのdatetime同士なら比較演算子が普通に使える
         身体障害者手帳が有効 = (交付年月日 <= 対象期間.date) * (対象期間.date <= 有効年月日)
-        身体障害者手帳最新等級認定 = 対象人物("身体障害者手帳最新等級認定", 対象期間)
-        return (身体障害者手帳が有効 * 身体障害者手帳最新等級認定)
+        身体障害者手帳等級認定 = 対象人物("身体障害者手帳等級認定", 対象期間)
+        return (身体障害者手帳が有効 * 身体障害者手帳等級認定)
