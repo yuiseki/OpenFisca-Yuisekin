@@ -8,6 +8,9 @@ RUN apt install -y \
     jq \
     curl
 
+RUN curl -Ls https://deb.nodesource.com/setup_18.x | bash
+RUN apt update && apt install -y nodejs
+
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install --no-cache-dir \
