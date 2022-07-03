@@ -49,8 +49,7 @@
 				"VisualStudioExptTeam.vscodeintellicode",
 				"mosapride.zenkaku",
 				"ms-python.python",
-				"ms-vsliveshare.vsliveshare",
-				"ms-pyright.pyright"
+				"ms-vsliveshare.vsliveshare"
 			]
 		}
 	}
