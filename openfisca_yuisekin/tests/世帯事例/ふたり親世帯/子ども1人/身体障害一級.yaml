@@ -1,5 +1,5 @@
-- name: 渋谷区 ふたり親世帯 一人っ子 身体障害一級
-  description: 渋谷区 ふたり親世帯 一人っ子 身体障害一級
+- name: ふたり親世帯 子ども1人 身体障害一級
+  description: ふたり親世帯 子ども1人 身体障害一級
   period: 2022-07
   absolute_error_margin: 0
   input:
