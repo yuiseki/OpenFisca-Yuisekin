@@ -55,7 +55,8 @@
 				"VisualStudioExptTeam.vscodeintellicode",
 				"mosapride.zenkaku",
 				"ms-python.python",
-				"ms-vsliveshare.vsliveshare"
+				"ms-vsliveshare.vsliveshare",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}
