@@ -29,12 +29,12 @@
 		"python.linting.pylintEnabled": false,
 		"python.linting.flake8Enabled": true,
 		"python.linting.flake8Args": [
-			"--ignore=E402,E501"
+			"--ignore=D101,D107,D401,E128,E251,E501,W503,D102,D200,D400"
 		],
 		"python.formatting.provider": "autopep8",
 		"python.formatting.autopep8Args": [
 			"--ignore",
-			"E402,E501",
+			"D101,D107,D401,E128,E251,E501,W503,D102,D200,D400",
 			"--max-line-length",
 			"150"
 		]

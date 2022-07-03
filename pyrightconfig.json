@@ -1,0 +1,15 @@
+{
+    "include": [
+        "openfisca_yuisekin"
+    ],
+    "reportTypeshedErrors": false,
+    "reportMissingImports": true,
+    "reportMissingTypeStubs": false,
+    "pythonVersion": "3.7",
+    "pythonPlatform": "Linux",
+    "executionEnvironments": [
+        {
+            "root": "openfisca_yuisekin"
+        }
+    ]
+}
