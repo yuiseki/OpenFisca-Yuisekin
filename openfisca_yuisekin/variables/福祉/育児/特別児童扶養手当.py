@@ -2,6 +2,7 @@
 特別児童育成手当の実装
 """
 
+import numpy as np
 from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 from openfisca_yuisekin.entities import 世帯
@@ -13,7 +14,7 @@ class 特別児童扶養手当(Variable):
     entity = 世帯
     definition_period = MONTH
     label = "保護者への特別児童扶養手当"
-    reference = "https://www.city.shibuya.tokyo.jp/kodomo/teate/hitorioya/hitorioya_teate.html"
+    reference = "https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/jido_f.html"
     documentation = """
     渋谷区の特別児童扶養手当制度
 
@@ -28,11 +29,21 @@ class 特別児童扶養手当(Variable):
 
         # 世帯で最も高い所得の人が基準となる
         世帯高所得 = 対象世帯("世帯高所得", 対象期間)
-        # 扶養人数が1人ではない場合を考慮する
+
+        # 世帯の扶養人数を考慮する必要がある
         世帯所得一覧 = 対象世帯.members("所得", 対象期間)
         扶養人数 = 対象世帯.sum(世帯所得一覧 < 扶養控除所得金額)
-        # TODO 児童扶養手当受給者でない場合にも対応する
-        所得制限限度額 = 特別児童扶養手当.所得制限限度額.児童扶養手当受給者.calc(扶養人数)
+
+        # 児童扶養手当受給者の場合とそうでない場合に対応する
+        児童扶養手当 = 対象世帯("児童扶養手当", 対象期間)
+        print(児童扶養手当)
+        所得制限限度額 = np.select(
+            [児童扶養手当 <= 0, 0 < 児童扶養手当],
+            [
+                特別児童扶養手当.所得制限限度額.児童扶養手当受給者.calc(扶養人数),
+                特別児童扶養手当.所得制限限度額.扶養義務者.calc(扶養人数),
+            ],
+            )
         所得条件 = 世帯高所得 <= 所得制限限度額
 
         身体障害者手帳等級一覧 = 対象世帯.members("身体障害者手帳等級", 対象期間)
