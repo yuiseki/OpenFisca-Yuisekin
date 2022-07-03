@@ -6,6 +6,7 @@ RUN apt install -y \
     vim \
     htop \
     jq \
+    nkf \
     curl
 
 RUN curl -Ls https://deb.nodesource.com/setup_18.x | bash
