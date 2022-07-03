@@ -12,7 +12,7 @@ import os
 
 from openfisca_core.taxbenefitsystems import TaxBenefitSystem
 from openfisca_yuisekin import entities
-from openfisca_yuisekin.situation_examples import couple
+from openfisca_yuisekin.situation_examples import 夫婦
 
 COUNTRY_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -35,5 +35,5 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
         self.open_api_config = {
             "variable_example": "可処分所得",
             "parameter_example": "税金.所得税率",
-            "simulation_example": couple,
+            "simulation_example": 夫婦,
             }
