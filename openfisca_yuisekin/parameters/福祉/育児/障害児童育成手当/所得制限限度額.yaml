@@ -1,0 +1,42 @@
+description: 渋谷区の児童手当の所得制限限度額
+metadata:
+  threshold_unit: person
+  rate_unit: 1
+  reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/teate/teate_gendogaku.html#ikusei
+brackets:
+- rate:
+    2000-05-01:
+      value: 3604000
+  threshold:
+    2000-05-01:
+      value: 0
+- rate:
+    2000-05-01:
+      value: 3984000
+  threshold:
+    2000-05-01:
+      value: 1
+- rate:
+    2000-05-01:
+      value: 4364000
+  threshold:
+    2000-05-01:
+      value: 2
+- rate:
+    2000-05-01:
+      value: 4744000
+  threshold:
+    2000-05-01:
+      value: 3
+- rate:
+    2000-05-01:
+      value: 5124000
+  threshold:
+    2000-05-01:
+      value: 4
+- rate:
+    2000-05-01:
+      value: 5504000
+  threshold:
+    2000-05-01:
+      value: 5
