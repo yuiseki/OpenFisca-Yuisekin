@@ -26,7 +26,6 @@ RUN make build
 RUN useradd -m user
 USER user
 
-EXPOSE 5000
-EXPOSE 3000
+EXPOSE 3000 5000
 
 CMD ["bash"]
