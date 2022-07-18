@@ -1,19 +1,6 @@
 FROM python:3.8-bullseye
 USER root
 
-RUN curl -fsSL https://get.docker.com | sh
-
-RUN apt update
-RUN apt install -y \
-    vim \
-    htop \
-    jq \
-    nkf \
-    curl
-
-RUN curl -Ls https://deb.nodesource.com/setup_18.x | bash
-RUN apt update && apt install -y nodejs
-
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install --no-cache-dir \
@@ -29,7 +16,6 @@ RUN make build
 RUN useradd -m user
 USER user
 
-EXPOSE 30000
 EXPOSE 50000
 
 CMD ["bash"]
