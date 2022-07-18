@@ -1,45 +1,41 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [spec, setSpec] = useState<any>();
+
+  useEffect(() => {
+    (async () => {
+      const newSpecRes = await fetch("http://localhost:50000/spec");
+      const newSpecJson = await newSpecRes.json();
+      setSpec(newSpecJson);
+    })();
+  }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      {spec && (
+        <>
+          <details>
+            <summary>世帯</summary>
+            <pre>
+              {JSON.stringify(spec.definitions["世帯"].properties, null, 2)}
+            </pre>
+          </details>
+          <details>
+            <summary>人物</summary>
+            <pre>
+              {JSON.stringify(spec.definitions["人物"].properties, null, 2)}
+            </pre>
+          </details>
+          <details>
+            <summary>エンドポイント</summary>
+            <pre>{JSON.stringify(spec.paths, null, 2)}</pre>
+          </details>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
