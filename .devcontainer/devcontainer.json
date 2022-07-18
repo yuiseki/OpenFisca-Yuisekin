@@ -23,30 +23,30 @@
 
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "user",
-	"settings": {
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "/bin/bash"
-			}
-		},
-		"terminal.integrated.defaultProfile.linux": "bash",
-		"editor.formatOnSave": true,
-		"python.pythonPath": "/usr/local/bin/python",
-		"python.linting.pylintEnabled": false,
-		"python.linting.flake8Enabled": true,
-		"python.linting.flake8Args": [
-			"--ignore=D101,D107,D401,E128,E133,E251,E501,W503,D102,D200,D400"
-		],
-		"python.formatting.provider": "autopep8",
-		"python.formatting.autopep8Args": [
-			"--ignore",
-			"D101,D107,D401,E128,E133,E251,E501,W503,D102,D200,D400",
-			"--max-line-length",
-			"150"
-		]
-	},
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "/bin/bash"
+					}
+				},
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"editor.formatOnSave": true,
+				"python.pythonPath": "/usr/local/bin/python",
+				"python.linting.pylintEnabled": false,
+				"python.linting.flake8Enabled": true,
+				"python.linting.flake8Args": [
+					"--ignore=D101,D107,D401,E128,E133,E251,E501,W503,D102,D200,D400"
+				],
+				"python.formatting.provider": "autopep8",
+				"python.formatting.autopep8Args": [
+					"--ignore",
+					"D101,D107,D401,E128,E133,E251,E501,W503,D102,D200,D400",
+					"--max-line-length",
+					"150"
+				]
+			},
 			"extensions": [
 				"MS-CEINTL.vscode-language-pack-ja",
 				"wraith13.bracket-lens",

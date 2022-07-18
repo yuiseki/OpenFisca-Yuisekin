@@ -2,10 +2,30 @@ version: "3.9"
 services:
   openfisca:
     build: .
+    restart: unless-stopped
     command: bash -c "make build && make serve-local"
     user: user:user
     ports:
       - 50000:50000
+    volumes:
+      - .:/app
+    networks:
+      - openfisca
+  dashboard:
+    build: .
+    restart: unless-stopped
+    command: bash -c "cd dashboard && npm run dev"
+    user: user:user
+    ports:
+      - 30000:30000
+    volumes:
+      - .:/app
+    networks:
+      - openfisca
+  workspace:
+    build: .
+    command: sleep infinity
+    user: user:user
     volumes:
       - .:/app
     networks:

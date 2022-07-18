@@ -1,6 +1,8 @@
 FROM python:3.8-bullseye
 USER root
 
+RUN curl -fsSL https://get.docker.com | sh
+
 RUN apt update
 RUN apt install -y \
     vim \
