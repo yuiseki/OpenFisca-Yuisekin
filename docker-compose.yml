@@ -17,7 +17,7 @@ services:
       context: ./dashboard
       dockerfile: ./Dockerfile
     volumes:
-      - ${LOCAL_WORKSPACE_FOLDER:-.}:/app
+      - ${LOCAL_WORKSPACE_FOLDER:-.}/dashboard:/app
     command: npm run dev
     user: user:user
     ports:
