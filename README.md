@@ -38,7 +38,7 @@ make
 make serve-local
 ```
 
-- GET http://localhost:5000/spec
-- GET http://localhost:5000/entities
-- GET http://localhost:5000/variables
-- GET http://localhost:5000/parameters
+- GET http://localhost:50000/spec
+- GET http://localhost:50000/entities
+- GET http://localhost:50000/variables
+- GET http://localhost:50000/parameters
