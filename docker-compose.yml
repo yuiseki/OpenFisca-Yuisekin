@@ -3,8 +3,8 @@ services:
   openfisca:
     build:
       context: .
-      dockerfile: Dockerfile
-    command: bash -c "make serve-local"
+      dockerfile: ./Dockerfile
+    command: make serve-local
     user: user:user
     ports:
       - 50000:50000
@@ -13,7 +13,11 @@ services:
   dashboard:
     build:
       context: ./dashboard
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ./
+        target: /app/dashboard
     command: npm run dev
     user: user:user
     ports:
