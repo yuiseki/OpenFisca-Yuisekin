@@ -2,8 +2,10 @@ version: "3.9"
 services:
   openfisca:
     build:
-      context: .
+      context: ./
       dockerfile: ./Dockerfile
+    volumes:
+      - ${LOCAL_WORKSPACE_FOLDER:-.}:/app
     command: make serve-local
     user: user:user
     ports:
@@ -15,9 +17,7 @@ services:
       context: ./dashboard
       dockerfile: ./Dockerfile
     volumes:
-      - type: bind
-        source: ./
-        target: /app/dashboard
+      - ${LOCAL_WORKSPACE_FOLDER:-.}:/app
     command: npm run dev
     user: user:user
     ports:
