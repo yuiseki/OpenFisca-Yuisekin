@@ -23,6 +23,9 @@ RUN pip install --no-cache-dir \
 WORKDIR /app
 COPY . /app
 
+RUN make install
+RUN make build
+
 EXPOSE 30000
 EXPOSE 50000
 
