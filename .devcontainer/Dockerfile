@@ -1,15 +1,14 @@
 FROM python:3.8-bullseye
-USER root
 
-RUN curl -fsSL https://get.docker.com | sh
-
-RUN apt update
-RUN apt install -y \
+RUN apt update && apt install -y \
+    git \
+    curl \
     vim \
     htop \
     jq \
-    nkf \
-    curl
+    nkf
+
+RUN curl -fsSL https://get.docker.com | sh
 
 RUN curl -Ls https://deb.nodesource.com/setup_18.x | bash
 RUN apt update && apt install -y nodejs
@@ -32,7 +31,6 @@ EXPOSE 50000
 RUN useradd -m user
 
 ARG NONROOT_USER=user
-
 RUN echo "#!/bin/sh\n\
     sudoIf() { if [ \"\$(id -u)\" -ne 0 ]; then sudo \"\$@\"; else \"\$@\"; fi }\n\
     SOCKET_GID=\$(stat -c '%g' /var/run/docker.sock) \n\
