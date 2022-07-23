@@ -1,41 +1,41 @@
-description: 渋谷区の児童扶養手当の扶養義務者の所得制限限度額（TODO）
+description: 渋谷区の児童扶養手当の扶養義務者の所得制限限度額
 metadata:
   threshold_unit: person
   rate_unit: 1
 brackets:
 - rate:
     2000-05-01:
-      value: 0
+      value: 2360000
   threshold:
     2000-05-01:
       value: 0
 - rate:
     2000-05-01:
-      value: 0
+      value: 2740000
   threshold:
     2000-05-01:
       value: 1
 - rate:
     2000-05-01:
-      value: 0
+      value: 3120000
   threshold:
     2000-05-01:
       value: 2
 - rate:
     2000-05-01:
-      value: 0
+      value: 3500000
   threshold:
     2000-05-01:
       value: 3
 - rate:
     2000-05-01:
-      value: 0
+      value: 3880000
   threshold:
     2000-05-01:
       value: 4
 - rate:
     2000-05-01:
-      value: 0
+      value: 4260000
   threshold:
     2000-05-01:
       value: 5
