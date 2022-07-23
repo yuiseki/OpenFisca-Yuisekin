@@ -3,7 +3,7 @@ metadata:
   reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/hitorioya/hitorioya_teate.html
   unit: currency-JPY
 values:
-  2010-05-01:
-    value: 0
+  2022-04-01:
+    value: 0.0230070
     metadata:
       reference: https://www.city.shibuya.tokyo.jp/kodomo/teate/hitorioya/hitorioya_teate.html
