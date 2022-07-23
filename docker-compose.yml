@@ -1,19 +1,29 @@
 version: "3.9"
 services:
   openfisca:
-    build: .
-    command: bash -c "make build && make serve-local"
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ${LOCAL_WORKSPACE_FOLDER:-.}:/app
+    command: make serve-local
     user: user:user
     ports:
-      - 5000:5000
-    volumes:
-      - .:/app
+      - 50000:50000
     networks:
       - openfisca
-
-volumes:
-  openfisca:
-    driver: local
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: ./Dockerfile
+    volumes:
+      - ${LOCAL_WORKSPACE_FOLDER:-.}/dashboard:/app
+    command: npm run dev
+    user: user:user
+    ports:
+      - 30000:30000
+    networks:
+      - openfisca
 
 networks:
   openfisca:

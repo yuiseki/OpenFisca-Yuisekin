@@ -43,7 +43,7 @@ test:
 	openfisca test --country-package openfisca_yuisekin openfisca_yuisekin/tests
 
 serve-local:
-	openfisca serve --country-package openfisca_yuisekin
+	openfisca serve --country-package openfisca_yuisekin --bind 0.0.0.0:50000
 
 calc:
-	curl -s -X POST -H "Content-Type: application/json" -d @calculate_api_example.json http://localhost:5000/calculate | jq .
+	curl -s -X POST -H "Content-Type: application/json" -d @calculate_api_example.json http://localhost:50000/calculate | jq .
