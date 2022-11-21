@@ -1,4 +1,4 @@
-- name: 保護者の所得が無くて子どもが1人の世帯への児童手当
+- name: 保護者の所得が無くて子どもが双子の世帯への児童手当
   period: 2022-06
   absolute_error_margin: 0
   input:
