@@ -3,39 +3,39 @@ metadata:
   threshold_unit: person
   rate_unit: 1
 brackets:
-- rate:
-    2000-05-01:
-      value: 490000
-  threshold:
-    2000-05-01:
-      value: 0
-- rate:
-    2000-05-01:
-      value: 870000
-  threshold:
-    2000-05-01:
-      value: 1
-- rate:
-    2000-05-01:
-      value: 1250000
-  threshold:
-    2000-05-01:
-      value: 2
-- rate:
-    2000-05-01:
-      value: 1630000
-  threshold:
-    2000-05-01:
-      value: 3
-- rate:
-    2000-05-01:
-      value: 2010000
-  threshold:
-    2000-05-01:
-      value: 4
-- rate:
-    2000-05-01:
-      value: 2390000
-  threshold:
-    2000-05-01:
-      value: 5
+  - rate:
+      2000-05-01:
+        value: 490000
+    threshold:
+      2000-05-01:
+        value: 0
+  - rate:
+      2000-05-01:
+        value: 870000
+    threshold:
+      2000-05-01:
+        value: 1
+  - rate:
+      2000-05-01:
+        value: 1250000
+    threshold:
+      2000-05-01:
+        value: 2
+  - rate:
+      2000-05-01:
+        value: 1630000
+    threshold:
+      2000-05-01:
+        value: 3
+  - rate:
+      2000-05-01:
+        value: 2010000
+    threshold:
+      2000-05-01:
+        value: 4
+  - rate:
+      2000-05-01:
+        value: 2390000
+    threshold:
+      2000-05-01:
+        value: 5
